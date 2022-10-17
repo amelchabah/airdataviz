@@ -1,6 +1,17 @@
 [{
-    "holidays": 51,
-    "family": 27,
-    "business": 15,
-    "other": 7
-}]
+        "reason": "holidays",
+        "percentage": 51
+    },
+    {
+        "reason": "family",
+        "percentage": 27
+    },
+    {
+        "reason": "business",
+        "percentage": 15
+    },
+    {
+        "reason": "other",
+        "percentage": 7
+    }
+]
