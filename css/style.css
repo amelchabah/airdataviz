@@ -72,16 +72,6 @@ body {
 
 /*text*/
 
-/* fonts */
-
-@font-face {
-    font-family: "pangea";
-    src: url("fonts/PangeaAfrikanTrial-Regular.woff") format('woff'),
-        url("fonts/PangeaAfrikanTrial-Regular.woff2") format('woff2'),
-        url("fonts/PangeaAfrikanTrial-Regular.otf") format("opentype");
-    font-weight: 400;
-}
-
 
 h1,
 h2,
@@ -97,22 +87,23 @@ p {
 h1 {
     text-transform: uppercase;
     font-family: 'Staatliches', cursive;
-    font-size: 8rem;
+    font-size: 9rem;
 }
 
 h2 {
-    font-family: 'League Spartan', sans-serif;
+    font-family: 'work sans', sans-serif;
+    font-weight: 700;
+    font-size: 4rem;
+}
+
+h3 {
+    font-family: 'work sans', sans-serif;
     font-weight: 700;
     font-size: 2rem;
 }
 
-h3 {
-    font-family: "pangea";
-    font-size: 2.2rem;
-}
-
 h4 {
-    font-family: 'pangea', sans-serif;
+    font-family: 'work sans', sans-serif;
     font-size: 1.2rem;
     line-height: 1.5;
 }
@@ -121,7 +112,7 @@ h5 {
     text-transform: uppercase;
     font-size: 0.8rem;
     line-height: 1.5;
-    font-family: 'League Spartan', sans-serif;
+    font-family: 'work sans', sans-serif;
     font-weight: 600;
     letter-spacing: 0.25rem;
 }
