@@ -1,3 +1,5 @@
+// récupération des données en json
+
 fetch("./json/data_reasons.json")
     .then(res => res.json())
     .then(data => console.log(JSON.stringify(data)));
@@ -14,4 +16,14 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 });
 
+// animations
 AOS.init();
+
+// smooth scroll
+$(function() {
+    $.scrollify({
+      section : ".scrollify",
+      scrollSpeed: 800,
+      scrollbars: false,
+    });
+  });
