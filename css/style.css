@@ -307,3 +307,83 @@ footer {
 
 
 /* data sections  */
+
+.data-map {
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.data-map article {
+    width: 40%;
+}
+
+
+/* map */
+
+.data-map svg {
+    display: block;
+}
+
+#world circle {
+    stroke: transparent;
+    stroke-width: 6px;
+}
+
+#latin-america, #south-africa, #west-africa, #north-africa, #russia, #south-asia {
+    fill: #8ee2c2;
+    cursor: pointer;
+}
+
+#south-africa:hover, #russia:hover, #west-africa:hover, #north-africa:hover, #south-asia:hover {
+    fill: #8ee2c2;
+}
+
+
+.world-tooltip {
+    width: 200px;
+    position: absolute;
+    z-index: 1000;
+    padding: 10px;
+    display: none;
+    background: #FFF;
+    border: 1px solid #CCC;
+    text-align: center;
+}
+
+.world-tooltip h4 {
+    margin: 0;
+}
+
+.world-tooltip span {
+    display: block;
+    margin-top: 5px;
+}
+
+.world-tooltip:after,
+.world-tooltip:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.world-tooltip:after {
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #FFF;
+    border-width: 20px;
+    margin-left: -20px;
+}
+
+.world-tooltip:before {
+    border-color: rgba(0, 0, 0, 0);
+    border-top-color: #CCC;
+    border-width: 21px;
+    margin-left: -21px;
+}
