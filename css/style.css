@@ -1,13 +1,51 @@
-/* ---------------------------------------------------------------------------------------------------------------------- */
-/*   text   */
-
-/* ---------------------------------------------------------------------------------------------------------------------- */
-
-
-/* ---------------------------------------------------------------------------------------------------------------------- */
-
-
-/* ---------------------------------------------------------------------------------------------------------------------- */
+/*longue feuille de style, mais triée :
+- scrollbar, animations
+- textes, balises principales, liens et boutons etc.
+- pages spécifiques et leurs attributs spécifiques
+- responsive pour 1200px, 1024px, 900px et 770px
+*/
 
 
-/* ---------------------------------------------------------------------------------------------------------------------- */
+*,
+*::after,
+::before {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    -ms-scroll-snap-type: y mandatory;
+    -webkit-scroll-snap-type: y mandatory;
+    -o-scroll-snap-type: y mandatory;
+    -moz-scroll-snap-type: y mandatory;
+
+}
+
+body {
+    background-color: wheat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    margin: 0;
+    padding: 0;
+    position: relative;
+    min-height: 100vh;
+    max-width: 100vw;
+
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -moz-overflow-style: none;
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+h1 {
+    color: aquamarine;
+}
