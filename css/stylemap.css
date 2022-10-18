@@ -1,0 +1,100 @@
+/*brouillon*/
+
+
+.data-map svg {
+  display: block;
+  margin: 100px auto;
+}
+
+#world circle {
+  stroke: transparent;
+  stroke-width: 6px;
+}
+
+#latin-america {
+  fill: rgb(144, 83, 137);
+  cursor: pointer;
+}
+#latin-america:hover {
+  fill: rgb(83, 39, 85);
+}
+
+#west-africa {
+  fill: rgb(198, 206, 91);
+  cursor: pointer;
+}
+#west-africa:hover {
+  fill: rgb(132, 150, 43);
+}
+
+#north-africa {
+  fill: rgb(209, 53, 39);
+  cursor: pointer;
+}
+#north-africa:hover {
+  fill: rgb(154, 17, 21);
+}
+
+#south-africa {
+  fill: rgb(0, 149, 159);
+  cursor: pointer;
+}
+#south-africa:hover {
+  fill: rgb(0, 109, 120);
+}
+
+#russia {
+  fill: rgb(0, 139, 200);
+  cursor: pointer;
+}
+#russia:hover {
+  fill: rgb(0, 91, 149);
+}
+
+#south-asia {
+  fill: rgb(242, 200, 1);
+  cursor: pointer;
+}
+#south-asia:hover {
+  fill: rgb(202, 145, 16);
+}
+
+.world-tooltip {
+  width: 200px;
+  position: absolute;
+  z-index: 1000;
+  padding: 10px;
+  display: none;
+  background: #FFF;
+  border: 1px solid #CCC;
+  text-align: center;
+}
+.world-tooltip h4 {
+  margin: 0;
+}
+.world-tooltip span {
+  display: block;
+  margin-top: 5px;
+}
+.world-tooltip:after, .world-tooltip:before {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+.world-tooltip:after {
+  border-color: rgba(0, 0, 0, 0);
+  border-top-color: #FFF;
+  border-width: 20px;
+  margin-left: -20px;
+}
+.world-tooltip:before {
+  border-color: rgba(0, 0, 0, 0);
+  border-top-color: #CCC;
+  border-width: 21px;
+  margin-left: -21px;
+}/*# sourceMappingURL=stylemap.css.map */
