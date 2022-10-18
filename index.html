@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
 
     <script src="js/script.js" defer></script>
+    <script src="js/datadeparture.js" defer></script>
+    <script src="js/datamap.js" defer></script>
+
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -74,6 +77,9 @@
             </div>
         </div>
     </div>
+
+    <!-- about -->
+
     <section class="scrollify bg-blue" id="about">
         <article class="about black">
             <h2>About the work</h2>
@@ -85,12 +91,20 @@
         </article>
     </section>
 
+    <!-- departure board -->
 
-    <section class="scrollify bg-green">
+    <section class="scrollify data-departure bg-green">
         <h1 class="black">bienvenue</h1>
         <p>departure board with top 10 international arrivals</p>
+        <table style="margin: auto; ">
+            <tbody id="departureboardhere">
+                <th class="rowdeparture lettertitle">TOP 10 INTERNATIONAL ARRIVALS</th>
+            </tbody>
+        </table>
+
     </section>
 
+    <!-- world map -->
     <section class="scrollify data-map bg-black">
         <article class="green">
             <h2 data-aos="fade-in" data-aos-delay="500">Top countries arrivals</h2>
@@ -3616,9 +3630,9 @@
         <div class="world-tooltip" id="south-asia-tooltip">
             <h4>Asia and the Pacific</h4>
         </div>
-
-
     </section>
+
+    <!-- reasons to visit -->
 
     <section class="scrollify data-reasons bg-yellow">
         <h1 class="white">bienvenue</h1>
