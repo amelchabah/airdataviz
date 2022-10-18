@@ -125,18 +125,21 @@ p {
 
 h1 {
     text-transform: uppercase;
-    font-family: 'Staatliches', cursive;
+    font-family: 'Karantina', cursive;
     font-size: 9rem;
 }
 
 h2 {
-    font-family: 'Staatliches', cursive;
+    text-transform: uppercase;
+    font-family: 'Karantina', cursive;
     font-weight: 700;
     font-size: 5rem;
+    margin-bottom: 1rem;
 }
 
 h3 {
-    font-family: 'Staatliches', cursive;
+    text-transform: uppercase;
+    font-family: 'Karantina', cursive;
     font-weight: 700;
     font-size: 2rem;
 }
@@ -284,8 +287,6 @@ footer {
     animation-fill-mode: forwards;
     -webkit-animation-fill-mode: forwards;
 }
-
-
 
 /* about */
 
