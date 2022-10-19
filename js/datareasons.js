@@ -18,7 +18,9 @@ let familysvg = '<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xml
 let othersvg = '<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 34.5749C27.8606 34.5749 30.5079 33.6615 32.666 32.1103C33.8872 31.2326 35.6616 31.2633 36.4165 32.5639C38.4153 36.0074 39.6104 40.3748 39.6104 45.1269C35.5519 47.6706 33.0691 50 25 50C16.9309 50 13.5835 47.2469 10.3896 45.1269C10.3896 40.3748 11.5847 36.0074 13.5835 32.5639C14.3384 31.2633 16.1128 31.2326 17.334 32.1103C19.4921 33.6615 22.1394 34.5749 25 34.5749Z" fill="#0A061D"/><path d="M36.3636 21.1039C36.3636 27.3799 31.276 32.4675 25 32.4675C18.724 32.4675 13.6364 27.3799 13.6364 21.1039C13.6364 14.8279 18.724 9.74026 25 9.74026C31.276 9.74026 36.3636 14.8279 36.3636 21.1039Z" fill="#0A061D"/></svg>'
 
 // remplissage de la grille
+
 let wrapperBlock = document.querySelector(".container");
+
 
 fetch('./json/data_reasons.json').then(function(res) {
     res.json().then(function(data) {
