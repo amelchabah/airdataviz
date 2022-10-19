@@ -506,6 +506,10 @@ footer {
     width: 40%;
 }
 
+.flexcontent {
+    display: flex;
+}
+
 .data-reasons article h3 {
     width: fit-content;
 }
