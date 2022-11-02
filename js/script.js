@@ -23,10 +23,10 @@ document.addEventListener("DOMContentLoaded", function() {
 AOS.init();
 
 // smooth scroll
-$(function() {
-    $.scrollify({
-        section: ".scrollify",
-        scrollSpeed: 800,
-        scrollbars: false,
-    });
-});
+// $(function() {
+//     $.scrollify({
+//         section: ".scrollify",
+//         scrollSpeed: 800,
+//         scrollbars: false,
+//     });
+// });
