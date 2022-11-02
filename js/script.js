@@ -1,8 +1,8 @@
 // récupération des données en json
 
-fetch("./json/data_reasons.json")
-    .then(res => res.json())
-    .then(data => console.log(JSON.stringify(data)));
+// fetch("./json/data_reasons.json")
+//     .then(res => res.json())
+//     .then(data => console.log(JSON.stringify(data)));
 
 document.addEventListener("DOMContentLoaded", function() {
     //lier le data.json

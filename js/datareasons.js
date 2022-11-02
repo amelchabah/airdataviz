@@ -1,4 +1,7 @@
 // déclaration des svg
+// import svg1 from '../img/map.svg' fait pas néo le dieuxxxxx
+
+
 
 let blanksvgfamily = '<svg id="family" width="50" height="50" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 55.3199C44.577 55.3199 48.8126 53.8583 52.2656 51.3765C54.2195 49.9721 57.0585 50.0213 58.2664 52.1023C61.4644 57.6118 63.3766 64.5997 63.3766 72.203C56.8831 76.2729 52.9106 80 40 80C27.0894 80 21.7336 75.5951 16.6234 72.203C16.6234 64.5997 18.5356 57.6118 21.7336 52.1023C22.9415 50.0213 25.7805 49.9721 27.7344 51.3765C31.1874 53.8583 35.423 55.3199 40 55.3199Z" fill="#F1F7ED"/><path d="M58.1818 33.7662C58.1818 43.8078 50.0415 51.9481 40 51.9481C29.9585 51.9481 21.8182 43.8078 21.8182 33.7662C21.8182 23.7247 29.9585 15.5844 40 15.5844C50.0415 15.5844 58.1818 23.7247 58.1818 33.7662Z" fill="#F1F7ED"/></svg>';
 
@@ -30,89 +33,81 @@ function shuffleArray(array) {
     }
 }
 
-let tab = []
+let tab = [];
+let per = [];
 
 fetch('./json/data_reasons.json').then(function(res) {
-    res.json().then(function(data) {
-        window.onload = function() {
-            data.forEach(function viewData(reason) {
-                for (var i = 0; i < reason.percentage; i++) {
-                    tab.push(reason.reason);
-                }
-                shuffleArray(tab);
-            })
+            res.json().then(function(data) {
+                    window.onload = function() {
+                        data.forEach(function viewData(reason) {
+                            for (var i = 0; i < reason.percentage; i++) {
+                                tab.push(reason.reason);
+                            }
+                            shuffleArray(tab);
+                        })
 
-            tab.forEach(function(reason) {
-                var square = document.createElement("div");
-                square.classList.add("" + reason + "");
-                wrapperBlock.appendChild(square).innerHTML += '<svg id="blanksvg' + reason + '" width="50" height="50" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 55.3199C44.577 55.3199 48.8126 53.8583 52.2656 51.3765C54.2195 49.9721 57.0585 50.0213 58.2664 52.1023C61.4644 57.6118 63.3766 64.5997 63.3766 72.203C56.8831 76.2729 52.9106 80 40 80C27.0894 80 21.7336 75.5951 16.6234 72.203C16.6234 64.5997 18.5356 57.6118 21.7336 52.1023C22.9415 50.0213 25.7805 49.9721 27.7344 51.3765C31.1874 53.8583 35.423 55.3199 40 55.3199Z" fill="#F1F7ED"/><path d="M58.1818 33.7662C58.1818 43.8078 50.0415 51.9481 40 51.9481C29.9585 51.9481 21.8182 43.8078 21.8182 33.7662C21.8182 23.7247 29.9585 15.5844 40 15.5844C50.0415 15.5844 58.1818 23.7247 58.1818 33.7662Z" fill="#F1F7ED"/></svg>';
-            })
+                        tab.forEach(function(reason) {
+                            var square = document.createElement("div");
+                            square.classList.add("" + reason + "");
+                            wrapperBlock.appendChild(square).innerHTML += '<svg id="blanksvg' + reason + '" width="50" height="50" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 55.3199C44.577 55.3199 48.8126 53.8583 52.2656 51.3765C54.2195 49.9721 57.0585 50.0213 58.2664 52.1023C61.4644 57.6118 63.3766 64.5997 63.3766 72.203C56.8831 76.2729 52.9106 80 40 80C27.0894 80 21.7336 75.5951 16.6234 72.203C16.6234 64.5997 18.5356 57.6118 21.7336 52.1023C22.9415 50.0213 25.7805 49.9721 27.7344 51.3765C31.1874 53.8583 35.423 55.3199 40 55.3199Z" fill="#F1F7ED"/><path d="M58.1818 33.7662C58.1818 43.8078 50.0415 51.9481 40 51.9481C29.9585 51.9481 21.8182 43.8078 21.8182 33.7662C21.8182 23.7247 29.9585 15.5844 40 15.5844C50.0415 15.5844 58.1818 23.7247 58.1818 33.7662Z" fill="#F1F7ED"/></svg>';
+                        })
 
-            data.forEach(function viewData(reason) {
-                document.querySelector(".percentage").innerHTML +=
-                    '<p class="' + reason.reason + 'percentage">' + reason.percentage + '% </p>';
-            })
-        }
-    });
-});
+                        data.forEach
+                        data.forEach(function viewData(per) {
+                            tab.push(per.reason);
+                        })
 
-
-// animation au hover
-
-let $holidays = $('.bouton.divholidays');
-let $business = $('.bouton.divbusiness');
-let $family = $('.bouton.divfamily');
-let $other = $('.bouton.divother');
+                    });
+            });
 
 
-function businessHover() {
-    $(".business").html(businesssvg);
-    $(this).css("cursor", "pointer").css("color", "#0a061d");
-};
+        // animation au hover
 
-function holidaysHover() {
-    $(".holidays").html(holidayssvg);
-    $(this).css("cursor", "pointer").css("color", "#0a061d");
-};
-
-function familyHover() {
-    $(".family").html(familysvg);
-    $(this).css("cursor", "pointer").css("color", "#0a061d");
-};
-
-function otherHover() {
-    $(".other").html(othersvg);
-    $(this).css("cursor", "pointer").css("color", "#0a061d");
-};
-
-function evidenceRemoveFamily() {
-    $(".family").html(blanksvgfamily);
-    $(this).css("cursor", null).css("color", "#f1f7ed");;
-};
-
-function evidenceRemoveBusiness() {
-    $(".business").html(blanksvgbusiness);
-    $(this).css("cursor", null).css("color", "#f1f7ed");;
-};
-
-function evidenceRemoveHolidays() {
-    $(".holidays").html(blanksvgholidays);
-    $(this).css("cursor", null).css("color", "#f1f7ed");;
-};
-
-function evidenceRemoveOther() {
-    $(".other").html(blanksvgother);
-    $(this).css("cursor", null).css("color", "#f1f7ed");;
-};
+        let $holidays = $('.bouton.divholidays');
+        let $business = $('.bouton.divbusiness');
+        let $family = $('.bouton.divfamily');
+        let $other = $('.bouton.divother');
 
 
+        function businessHover() {
+            $(".business").html(businesssvg);
+            $(this).css("cursor", "pointer").css("color", "#0a061d");
+        };
 
-function showPercentage() {
+        function holidaysHover() {
+            $(".holidays").html(holidayssvg);
+            $(this).css("cursor", "pointer").css("color", "#0a061d");
+        };
 
-};
+        function familyHover() {
+            $(".family").html(familysvg);
+            $(this).css("cursor", "pointer").css("color", "#0a061d");
+        };
+
+        function otherHover() {
+            $(".other").html(othersvg);
+            $(this).css("cursor", "pointer").css("color", "#0a061d");
+        };
+
+        function evidenceRemoveFamily() {
+            $(".family").html(blanksvgfamily);
+            $(this).css("cursor", null).css("color", "#f1f7ed");;
+        };
+
+        function evidenceRemoveBusiness() {
+            $(".business").html(blanksvgbusiness);
+            $(this).css("cursor", null).css("color", "#f1f7ed");;
+        };
+
+        function evidenceRemoveHolidays() {
+            $(".holidays").html(blanksvgholidays);
+            $(this).css("cursor", null).css("color", "#f1f7ed");;
+        };
+
+        function evidenceRemoveOther() {
+            $(".other").html(blanksvgother);
+            $(this).css("cursor", null).css("color", "#f1f7ed");;
+        };
 
 
-$business.on('mouseover', businessHover).on('mouseleave', evidenceRemoveBusiness);
-$holidays.on('mouseover', holidaysHover).on('mouseleave', evidenceRemoveHolidays);
-$family.on('mouseover', familyHover).on('mouseleave', evidenceRemoveFamily);
-$other.on('mouseover', otherHover).on('mouseleave', evidenceRemoveOther);
+        $business.on('mouseover', businessHover).on('mouseleave', evidenceRemoveBusiness); $holidays.on('mouseover', holidaysHover).on('mouseleave', evidenceRemoveHolidays); $family.on('mouseover', familyHover).on('mouseleave', evidenceRemoveFamily); $other.on('mouseover', otherHover).on('mouseleave', evidenceRemoveOther);
