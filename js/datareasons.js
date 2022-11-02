@@ -61,13 +61,13 @@ fetch('./json/data_reasons.json').then(function(res) {
     })
 });
 
-let perholidays = '<h3 class="h3Per"> 51% </h3>' +
+let perholidays = '<h3 class="h3Per black   "> 51% </h3>' +
     '<p> The main reason people travel is for holidays. We can see that almost one in two people travel for the pleasure of going on holiday. <p>';
-let perbusiness = '<h3 class="h3Per"> 15% </h3>' +
+let perbusiness = '<h3 class="h3Per black   "> 15% </h3>' +
     '<p> People also travel for work reasons. 15% of travellers travel to work abroad or to set up their own business. <p>';
-let perfamily = '<h3 class="h3Per"> 27% </h3>' +
+let perfamily = '<h3 class="h3Per black "> 27% </h3>' +
     '<p> The second main reason people travel, after holidays, is for family reasons. Nearly a quarter of people travel for this reason. <p>';
-let perother = '<h3 class="h3Per"> 7% </h3>' +
+let perother = '<h3 class="h3Per black  "> 7% </h3>' +
     '<p> There are also many other reasons, they do not travel for business or tourism but probably for a more personal reason like 7% of the people. <p>';
 
 // animation au hover
@@ -106,25 +106,25 @@ function otherHover() {
 
 function evidenceRemoveFamily() {
     $(".family").html(blanksvgfamily);
-    $(".percentage").html(" <p> Hover to see more... </p>");
+    $(".percentage").html(" ");
     $(this).css("cursor", null).css("color", "#f1f7ed");;
 };
 
 function evidenceRemoveBusiness() {
     $(".business").html(blanksvgbusiness);
-    $(".percentage").html(" <p> Hover to see more... </p>");
+    $(".percentage").html(" ");
     $(this).css("cursor", null).css("color", "#f1f7ed");;
 };
 
 function evidenceRemoveHolidays() {
     $(".holidays").html(blanksvgholidays);
-    $(".percentage").html(" <p> Hover to see more... </p>");
+    $(".percentage").html(" ");
     $(this).css("cursor", null).css("color", "#f1f7ed");;
 };
 
 function evidenceRemoveOther() {
     $(".other").html(blanksvgother);
-    $(".percentage").html(" <p> Hover to see more... </p>");
+    $(".percentage").html(" ");
     $(this).css("cursor", null).css("color", "#f1f7ed");;
 };
 
