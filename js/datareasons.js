@@ -18,7 +18,7 @@ let businesssvg = '<svg width="50" height="50" viewBox="0 0 80 80" fill="none" x
 
 let familysvg = '<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.6048 10.6855C25.6048 16.5869 30.3889 21.371 36.2903 21.371C42.1917 21.371 46.9758 16.5869 46.9758 10.6855C46.9758 4.78405 42.1917 0 36.2903 0C30.3889 0 25.6048 4.78405 25.6048 10.6855Z" fill="#0A061D"/><path d="M20.8018 47.904C21.7385 48.0307 22.6792 47.6679 23.2472 46.9123C25.8317 43.4748 24.8992 36.187 24.8992 30.8468C24.8992 26.728 26.4829 25.3816 24.8597 22.2766C23.9945 20.6214 21.7838 20.5904 20.1944 21.5712C18.3118 22.7328 16.0939 23.403 13.7195 23.403C11.345 23.403 9.12711 22.7328 7.2446 21.5712C5.65512 20.5904 3.44449 20.6214 2.57925 22.2766C0.956104 25.3816 -3.05176e-05 29.1928 -3.05176e-05 33.3116C-3.05176e-05 33.8285 0.0150324 34.3406 0.0445855 34.8471C0.077106 35.4044 0.282341 35.9375 0.628539 36.3754C5.49555 42.5326 12.6461 46.8017 20.8018 47.904Z" fill="#0A061D"/><path d="M29.1981 47.9689C28.2614 48.0955 27.3207 47.7327 26.7527 46.9772C24.1683 43.5396 24.9472 37.9877 24.9472 32.6475C24.9472 28.5287 23.5171 25.4465 25.1402 22.3414C26.0055 20.6862 28.2161 20.6553 29.8056 21.636C31.6881 22.7976 33.906 23.4679 36.2805 23.4679C38.6549 23.4679 40.8728 22.7976 42.7553 21.636C44.3448 20.6553 46.5555 20.6862 47.4207 22.3414C49.0438 25.4465 50 29.2576 50 33.3764C50 33.8934 49.9849 34.4055 49.9554 34.9119C49.9228 35.4693 49.7176 36.0023 49.3714 36.4403C44.5044 42.5975 37.3538 46.8665 29.1981 47.9689Z" fill="#0A061D"/><path d="M3.02417 10.6855C3.02417 16.5869 7.80822 21.371 13.7097 21.371C19.6111 21.371 24.3951 16.5869 24.3951 10.6855C24.3951 4.78405 19.6111 0 13.7097 0C7.80822 0 3.02417 4.78405 3.02417 10.6855Z" fill="#0A061D"/><path d="M24.9472 32.6475C22.7222 32.6475 20.6406 32.0339 18.8623 30.9666C17.2608 30.0055 15.0487 30.0351 14.196 31.6969C12.6802 34.6509 11.7896 38.2573 11.7896 42.1502C11.7896 49.7329 14.9097 49.2917 19.5807 48.6312C21.0772 48.4196 22.7328 48.1855 24.4959 48.1855C26.2247 48.1855 27.901 48.4105 29.4522 48.6188C34.4213 49.2859 38.1048 49.7804 38.1048 42.1502C38.1048 38.2573 37.2142 34.6509 35.6983 31.6969C34.8456 30.0352 32.6336 30.0055 31.0321 30.9666C29.2538 32.0339 27.1721 32.6475 24.9472 32.6475Z" fill="#FFE26E"/><path d="M14.7177 20.5645C14.7177 26.2432 19.2761 30.8468 24.8992 30.8468C30.5222 30.8468 35.0806 26.2432 35.0806 20.5645C35.0806 14.8858 30.5222 10.2823 24.8992 10.2823C19.2761 10.2823 14.7177 14.8858 14.7177 20.5645Z" fill="#FFE26E"/></svg>';
 
-let othersvg = '<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 34.5749C27.8606 34.5749 30.5079 33.6615 32.666 32.1103C33.8872 31.2326 35.6616 31.2633 36.4165 32.5639C38.4153 36.0074 39.6104 40.3748 39.6104 45.1269C35.5519 47.6706 33.0691 50 25 50C16.9309 50 13.5835 47.2469 10.3896 45.1269C10.3896 40.3748 11.5847 36.0074 13.5835 32.5639C14.3384 31.2633 16.1128 31.2326 17.334 32.1103C19.4921 33.6615 22.1394 34.5749 25 34.5749Z" fill="#0A061D"/><path d="M36.3636 21.1039C36.3636 27.3799 31.276 32.4675 25 32.4675C18.724 32.4675 13.6364 27.3799 13.6364 21.1039C13.6364 14.8279 18.724 9.74026 25 9.74026C31.276 9.74026 36.3636 14.8279 36.3636 21.1039Z" fill="#0A061D"/></svg>'
+let othersvg = '<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25 34.5749C27.8606 34.5749 30.5079 33.6615 32.666 32.1103C33.8872 31.2326 35.6616 31.2633 36.4165 32.5639C38.4153 36.0074 39.6104 40.3748 39.6104 45.1269C35.5519 47.6706 33.0691 50 25 50C16.9309 50 13.5835 47.2469 10.3896 45.1269C10.3896 40.3748 11.5847 36.0074 13.5835 32.5639C14.3384 31.2633 16.1128 31.2326 17.334 32.1103C19.4921 33.6615 22.1394 34.5749 25 34.5749Z" fill="#0A061D"/><path d="M36.3636 21.1039C36.3636 27.3799 31.276 32.4675 25 32.4675C18.724 32.4675 13.6364 27.3799 13.6364 21.1039C13.6364 14.8279 18.724 9.74026 25 9.74026C31.276 9.74026 36.3636 14.8279 36.3636 21.1039Z" fill="#0A061D"/></svg>';
 
 // remplissage de la grille
 
@@ -37,77 +37,100 @@ let tab = [];
 let per = [];
 
 fetch('./json/data_reasons.json').then(function(res) {
-            res.json().then(function(data) {
-                    window.onload = function() {
-                        data.forEach(function viewData(reason) {
-                            for (var i = 0; i < reason.percentage; i++) {
-                                tab.push(reason.reason);
-                            }
-                            shuffleArray(tab);
-                        })
+    res.json().then(function(data) {
+        window.onload = function() {
+            data.forEach(function viewData(reason) {
+                for (var i = 0; i < reason.percentage; i++) {
+                    tab.push(reason.reason);
+                }
+                shuffleArray(tab);
+            })
 
-                        tab.forEach(function(reason) {
-                            var square = document.createElement("div");
-                            square.classList.add("" + reason + "");
-                            wrapperBlock.appendChild(square).innerHTML += '<svg id="blanksvg' + reason + '" width="50" height="50" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 55.3199C44.577 55.3199 48.8126 53.8583 52.2656 51.3765C54.2195 49.9721 57.0585 50.0213 58.2664 52.1023C61.4644 57.6118 63.3766 64.5997 63.3766 72.203C56.8831 76.2729 52.9106 80 40 80C27.0894 80 21.7336 75.5951 16.6234 72.203C16.6234 64.5997 18.5356 57.6118 21.7336 52.1023C22.9415 50.0213 25.7805 49.9721 27.7344 51.3765C31.1874 53.8583 35.423 55.3199 40 55.3199Z" fill="#F1F7ED"/><path d="M58.1818 33.7662C58.1818 43.8078 50.0415 51.9481 40 51.9481C29.9585 51.9481 21.8182 43.8078 21.8182 33.7662C21.8182 23.7247 29.9585 15.5844 40 15.5844C50.0415 15.5844 58.1818 23.7247 58.1818 33.7662Z" fill="#F1F7ED"/></svg>';
-                        })
+            tab.forEach(function(reason) {
+                var square = document.createElement("div");
+                square.classList.add("" + reason + "");
+                wrapperBlock.appendChild(square).innerHTML += '<svg id="blanksvg' + reason + '" width="50" height="50" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 55.3199C44.577 55.3199 48.8126 53.8583 52.2656 51.3765C54.2195 49.9721 57.0585 50.0213 58.2664 52.1023C61.4644 57.6118 63.3766 64.5997 63.3766 72.203C56.8831 76.2729 52.9106 80 40 80C27.0894 80 21.7336 75.5951 16.6234 72.203C16.6234 64.5997 18.5356 57.6118 21.7336 52.1023C22.9415 50.0213 25.7805 49.9721 27.7344 51.3765C31.1874 53.8583 35.423 55.3199 40 55.3199Z" fill="#F1F7ED"/><path d="M58.1818 33.7662C58.1818 43.8078 50.0415 51.9481 40 51.9481C29.9585 51.9481 21.8182 43.8078 21.8182 33.7662C21.8182 23.7247 29.9585 15.5844 40 15.5844C50.0415 15.5844 58.1818 23.7247 58.1818 33.7662Z" fill="#F1F7ED"/></svg>';
+            })
 
-                        data.forEach
-                        data.forEach(function viewData(per) {
-                            tab.push(per.reason);
-                        })
+            // data.forEach(function(reason) {
+            //     per.push(reason.percentage);
+            //     // console.log(per[1]);
+            //     return per;
+            // })
+        }
+    })
+});
 
-                    });
-            });
+let perholidays = '<h3 class="h3Per"> 51% </h3>' +
+    '<p> The main reason people travel is for holidays. We can see that almost one in two people travel for the pleasure of going on holiday. <p>';
+let perbusiness = '<h3 class="h3Per"> 15% </h3>' +
+    '<p> People also travel for work reasons. 15% of travellers travel to work abroad or to set up their own business. <p>';
+let perfamily = '<h3 class="h3Per"> 27% </h3>' +
+    '<p> The second main reason people travel, after holidays, is for family reasons. Nearly a quarter of people travel for this reason. <p>';
+let perother = '<h3 class="h3Per"> 7% </h3>' +
+    '<p> There are also many other reasons, they do not travel for business or tourism but probably for a more personal reason like 7% of the people. <p>';
 
+// animation au hover
 
-        // animation au hover
-
-        let $holidays = $('.bouton.divholidays');
-        let $business = $('.bouton.divbusiness');
-        let $family = $('.bouton.divfamily');
-        let $other = $('.bouton.divother');
-
-
-        function businessHover() {
-            $(".business").html(businesssvg);
-            $(this).css("cursor", "pointer").css("color", "#0a061d");
-        };
-
-        function holidaysHover() {
-            $(".holidays").html(holidayssvg);
-            $(this).css("cursor", "pointer").css("color", "#0a061d");
-        };
-
-        function familyHover() {
-            $(".family").html(familysvg);
-            $(this).css("cursor", "pointer").css("color", "#0a061d");
-        };
-
-        function otherHover() {
-            $(".other").html(othersvg);
-            $(this).css("cursor", "pointer").css("color", "#0a061d");
-        };
-
-        function evidenceRemoveFamily() {
-            $(".family").html(blanksvgfamily);
-            $(this).css("cursor", null).css("color", "#f1f7ed");;
-        };
-
-        function evidenceRemoveBusiness() {
-            $(".business").html(blanksvgbusiness);
-            $(this).css("cursor", null).css("color", "#f1f7ed");;
-        };
-
-        function evidenceRemoveHolidays() {
-            $(".holidays").html(blanksvgholidays);
-            $(this).css("cursor", null).css("color", "#f1f7ed");;
-        };
-
-        function evidenceRemoveOther() {
-            $(".other").html(blanksvgother);
-            $(this).css("cursor", null).css("color", "#f1f7ed");;
-        };
+let $holidays = $('.bouton.divholidays');
+let $business = $('.bouton.divbusiness');
+let $family = $('.bouton.divfamily');
+let $other = $('.bouton.divother');
 
 
-        $business.on('mouseover', businessHover).on('mouseleave', evidenceRemoveBusiness); $holidays.on('mouseover', holidaysHover).on('mouseleave', evidenceRemoveHolidays); $family.on('mouseover', familyHover).on('mouseleave', evidenceRemoveFamily); $other.on('mouseover', otherHover).on('mouseleave', evidenceRemoveOther);
+// console.log(perholidays)
+
+function businessHover() {
+    $(".business").html(businesssvg);
+    $(".percentage").html(perbusiness);
+    $(this).css("cursor", "pointer").css("color", "#0a061d");
+};
+
+function holidaysHover() {
+    $(".holidays").html(holidayssvg);
+    $(".percentage").html(perholidays);
+    $(this).css("cursor", "pointer").css("color", "#0a061d");
+};
+
+function familyHover() {
+    $(".family").html(familysvg);
+    $(".percentage").html(perfamily);
+    $(this).css("cursor", "pointer").css("color", "#0a061d");
+};
+
+function otherHover() {
+    $(".other").html(othersvg);
+    $(".percentage").html(perother);
+    $(this).css("cursor", "pointer").css("color", "#0a061d");
+};
+
+function evidenceRemoveFamily() {
+    $(".family").html(blanksvgfamily);
+    $(".percentage").html(" <p> Hover to see more... </p>");
+    $(this).css("cursor", null).css("color", "#f1f7ed");;
+};
+
+function evidenceRemoveBusiness() {
+    $(".business").html(blanksvgbusiness);
+    $(".percentage").html(" <p> Hover to see more... </p>");
+    $(this).css("cursor", null).css("color", "#f1f7ed");;
+};
+
+function evidenceRemoveHolidays() {
+    $(".holidays").html(blanksvgholidays);
+    $(".percentage").html(" <p> Hover to see more... </p>");
+    $(this).css("cursor", null).css("color", "#f1f7ed");;
+};
+
+function evidenceRemoveOther() {
+    $(".other").html(blanksvgother);
+    $(".percentage").html(" <p> Hover to see more... </p>");
+    $(this).css("cursor", null).css("color", "#f1f7ed");;
+};
+
+
+
+$business.on('mouseover', businessHover).on('mouseleave', evidenceRemoveBusiness);
+$holidays.on('mouseover', holidaysHover).on('mouseleave', evidenceRemoveHolidays);
+$family.on('mouseover', familyHover).on('mouseleave', evidenceRemoveFamily);
+$other.on('mouseover', otherHover).on('mouseleave', evidenceRemoveOther);
