@@ -22,17 +22,16 @@ let othersvg = '<svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmln
 
 let wrapperBlock = document.querySelector(".container");
 
-function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-}
+// function shuffleArray(array) {
+//     for (var i = array.length - 1; i > 0; i--) {
+//         var j = Math.floor(Math.random() * (i + 1));
+//         var temp = array[i];
+//         array[i] = array[j];
+//         array[j] = temp;
+//     }
+// };
 
 let tab = [];
-let per = [];
 
 fetch('./json/data_reasons.json').then(function(res) {
     res.json().then(function(data) {
@@ -41,7 +40,8 @@ fetch('./json/data_reasons.json').then(function(res) {
                 for (var i = 0; i < reason.percentage; i++) {
                     tab.push(reason.reason);
                 }
-                shuffleArray(tab);
+                // shuffleArray(tab);
+                tab.sort(function(a, b) { return Math.random() - 0.5 })
             })
 
             tab.forEach(function(reason) {
@@ -49,9 +49,8 @@ fetch('./json/data_reasons.json').then(function(res) {
                 square.classList.add("" + reason + "");
                 wrapperBlock.appendChild(square).innerHTML += '<svg id="blanksvg' + reason + '" width="50" height="50" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 55.3199C44.577 55.3199 48.8126 53.8583 52.2656 51.3765C54.2195 49.9721 57.0585 50.0213 58.2664 52.1023C61.4644 57.6118 63.3766 64.5997 63.3766 72.203C56.8831 76.2729 52.9106 80 40 80C27.0894 80 21.7336 75.5951 16.6234 72.203C16.6234 64.5997 18.5356 57.6118 21.7336 52.1023C22.9415 50.0213 25.7805 49.9721 27.7344 51.3765C31.1874 53.8583 35.423 55.3199 40 55.3199Z" fill="#F1F7ED"/><path d="M58.1818 33.7662C58.1818 43.8078 50.0415 51.9481 40 51.9481C29.9585 51.9481 21.8182 43.8078 21.8182 33.7662C21.8182 23.7247 29.9585 15.5844 40 15.5844C50.0415 15.5844 58.1818 23.7247 58.1818 33.7662Z" fill="#F1F7ED"/></svg>';
             })
-
         }
-    })
+    });
 });
 
 let perholidays = '<h3 class="h3Per black   "> 51% </h3>' +
@@ -98,25 +97,25 @@ function otherHover() {
 function evidenceRemoveFamily() {
     $(".family").html(blanksvgfamily);
     $(".percentage").html(" ");
-    $(this).css("cursor", null).css("color", "#f1f7ed");;
+    $(this).css("cursor", null).css("color", "#f1f7ed");
 };
 
 function evidenceRemoveBusiness() {
     $(".business").html(blanksvgbusiness);
     $(".percentage").html(" ");
-    $(this).css("cursor", null).css("color", "#f1f7ed");;
+    $(this).css("cursor", null).css("color", "#f1f7ed");
 };
 
 function evidenceRemoveHolidays() {
     $(".holidays").html(blanksvgholidays);
     $(".percentage").html(" ");
-    $(this).css("cursor", null).css("color", "#f1f7ed");;
+    $(this).css("cursor", null).css("color", "#f1f7ed");
 };
 
 function evidenceRemoveOther() {
     $(".other").html(blanksvgother);
     $(".percentage").html(" ");
-    $(this).css("cursor", null).css("color", "#f1f7ed");;
+    $(this).css("cursor", null).css("color", "#f1f7ed");
 };
 
 
