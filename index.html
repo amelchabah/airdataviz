@@ -13,6 +13,7 @@
     <script src="js/datamap.js" defer></script>
     <script src="js/datareasons.js" defer></script>
     <script src="js/datapodium.js" defer></script>
+    <script src="js/d3.js"></script>
 
 
     <!-- fonts -->
@@ -3637,6 +3638,12 @@
     <!-- podium best countries -->
 
     <section class="scrollify data-podium bg-blue">
+        <div class="divsvgpodium">
+            <h2 class="black"><span class="white"> TOP 3</span> MOST VISITED CITIES IN <span class="white">2022</span></h2>
+            <svg class="podiumsvg" width="175vmin" height="75vmin" viewBox="0 0 100 100">  
+                <g id="podiums"></g>
+            </svg>
+        </div>
     </section>
 
     <!-- reasons to visit -->
