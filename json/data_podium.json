@@ -2,22 +2,27 @@
     "year": 2022,
     "top": {
         "top1": {
+            "class": "france",
             "country": "France",
             "travellers": 84.4
         },
         "top2": {
+            "class": "spain",
             "country": "Spain",
             "travellers": 83.7
         },
         "top3": {
-            "country": "USA",
+            "class": "usa",
+            "country": "United States",
             "travellers": 79.3
         },
         "top4": {
+            "class": "china",
             "country": "China",
             "travellers": 65.7
         },
         "top5": {
+            "class": "italy",
             "country": "Italy",
             "travellers": 64.5
         }

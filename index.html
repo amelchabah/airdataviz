@@ -17,8 +17,8 @@
     <script src="js/script.js" defer></script>
     <script src="js/datadeparture.js" defer></script>
     <script src="js/datamap.js" defer></script>
-    <script src="js/datapodium.js" defer></script>
-    <script src="js/datareasons.js" defer></script>
+    <script src="js/datapodium.js" type="module" defer></script>
+    <script src="js/datareasons.js" type="module" defer></script>
 
 
     <!-- librairies -->
@@ -3641,8 +3641,8 @@ d="M75 78C76.6568542 78 78 76.6568542 78 75 78 73.3431458 76.6568542 72 75 72 73
     <section class="scrollify data-podium bg-blue">
         <div class="divsvgpodium">
             <h2 class="black"><span class="white"> TOP 3</span> MOST VISITED CITIES IN <span class="white">2022</span></h2>
-            <svg class="" width="175vmin" height="75vmin" viewBox="0 0 100 100"> 
-                <g class="podiumsvg"></g> 
+            <svg id="podiumsvg" width="100vmin" height="50vmin" viewBox="0 0 100 100"> 
+                <!-- <rect class="rect1" transform="translate(43.333333333333336, 0)" style="width: 33px; height: 84.4px; y: 10.6px; fill: rgb(10, 6, 29);"></rect> -->
             </svg>
         </div>
     </section>
