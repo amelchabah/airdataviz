@@ -1,74 +1,48 @@
-fetch('./json/data_podium.json').then(function(e) {
-    e.json().then(function(data) {
-        window.onload = function() {
+// window.onload = function() {
+//     getDataPodium();
+// };
 
-            let trv = [];
-            let cit = [];
-            console.log(trv);
-            console.log(cit);
+// function getDataPodium() {
+//     fetch('./json/data_podium.json')
+//         .then(res => res.json())
+//         .then(data => {
 
-            data.forEach(function viewData(podium) {
-                trv.push(podium.top.top2.travellers);
-                trv.push(podium.top.top1.travellers);
-                trv.push(podium.top.top3.travellers);
-                cit.push(podium.top.top2.country);
-                cit.push(podium.top.top1.country);
-                cit.push(podium.top.top3.country);
-            });
+//             let trv = [];
+//             let cit = [];
+//             let cla = [];
 
-            cit.forEach(function(step) {
-                var newG = document.createElement("g");
-                newG.classList.add("" + step + "");
-                document.querySelector(".podiumsvg").appendChild(newG);
-            });
+//             data.forEach(function viewData(podium) {
+//                 trv.push(podium.top.top2.travellers);
+//                 trv.push(podium.top.top1.travellers);
+//                 trv.push(podium.top.top3.travellers);
+//                 cit.push(podium.top.top2.country);
+//                 cit.push(podium.top.top1.country);
+//                 cit.push(podium.top.top3.country);
+//                 cla.push(podium.top.top2.class);
+//                 cla.push(podium.top.top1.class);
+//                 cla.push(podium.top.top3.class);
+//             });
 
-            for (var i = 0; i < trv.length; i++) {
+//             console.log(trv);
+//             console.log(cit);
+//             console.log(cla);
 
-                let width = 100 / trv.length;
-                let tour = trv[i];
-                let city = cit[i];
+//             let cl = cit.length;
+//             let space = 100 / cit.length + 3;
 
-                let newStep = '<rect style="width: ' + width + '; height: ' + tour + '; fill: #0a061d; stroke: white;"></rect>';
-                $("." + city + "").html(newStep);
+//             for (var i = 0; i < cl; i++) {
+//                 // let r = ;
+//                 console.log(i);
+//                 let rect = document.createElement("rect").classList.add(`rect${i}`);
+//                 document.querySelector("#podiumsvg").innerHTML += `<rect class="rect${i}"></rect>`;
 
-                console.log(width);
-                console.log(city);
-                console.log(tour);
-                console.log(newStep);
-
-            };
-        };
-        // $("." + city + "").css("background-color", "blue");
-        // $("." + city + "").css("transform", "translate(25px, 0)");
-
-        // step = d3.select("#podiums")
-        //     .selectAll(".steps")
-        //     .data(trv)
-        //     .enter()
-        //     .append("g")
-        //     .attr("class", "steps")
-        //     .attr("transform", (d, i) => `translate(${i*space}, 0)`);
-
-        // d3.selectAll(".steps")
-        //     .append("rect")
-        //     .style("width", width)
-        //     .style("height", (d, i) => trv[i] * 3)
-        //     .style("y", (d, i) => -(trv[i] * 3) + 95)
-        //     .style("fill", "#0a061d");
-
-
-        // step.on("mouseenter", function(e, d) {
-        //     /* transparence */
-        //     d3.selectAll(".steps")
-        //         .style("opacity", "0.5")
-        //     d3.select(this)
-        //         .style("opacity", null)
-        // })
-
-        // step.on("mouseleave", function() {
-        //     /* transparence */
-        //     d3.selectAll(".steps")
-        // .style("opacity", null)
-        // })
-    });
-});
+//                 $('.rect' + i + '').attr("transform", "translate(" + space * i + ", 0)");
+//                 $('.rect' + i + '').css({
+//                     "width": "33px",
+//                     "height": (trv[i]) + "px",
+//                     "y": -(trv[i]) + 95,
+//                     "fill": "#0a061d"
+//                 });
+//             };
+//         });
+// };
