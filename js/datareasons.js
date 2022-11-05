@@ -39,23 +39,27 @@ function getDataPodium() {
             let cl = cit.length;
             let space = 150 / trv.length;
 
+
+
             for (var i = 0; i < cl; i++) {
                 console.log(i);
                 document.querySelector("#podiumsvg").innerHTML += `<rect class="rect${i}"></rect>`;
-                $('.rect' + i + '').attr("transform", "translate(" + ((space * i) - (0.5 * space)) + ", 0)");
-                $('.rect' + i + '').css({
+                $(`.rect${i}`).attr("transform", "translate(" + ((space * i) - (0.5 * space)) + ", 0)");
+                $(`.rect${i}`).css({
                     "width": "50px",
                     "height": (trv[i]) + "px",
                     "y": -(trv[i]) + 95,
                     "fill": "#0a061d",
                     "stroke": "#87b1ff",
                 });
-
             };
 
-            // document.querySelector('.rect1').innerHTML += `<svg width="17" height="58" viewBox="0 0 17 58" fill="none" xmlns="http://www.w3.org/2000/svg">
-            // <path d="M16.28 49.072V58H1.112V49.072H4.376V9.328H0.92L2.84 0.399998H13.496V49.072H16.28Z" fill="#F1F7ED"/>
-            // </svg>`;
+            for (var i = 1; i < 4; i++) {
+                let pod = [2, 1, 3];
+                document.querySelector('#podiumsvg').innerHTML += `<text class="top top${i}" x="${22.5 - space}px" y="90px">${pod[i-1]}</text>`;
+                $(`.top${i}`).attr("transform", "translate(" + ((space * i) - (0.5 * space)) + ", 0)");
+            };
+
 
             const range = document.querySelector("input[type=\"range\"]");
             range.addEventListener("input", () => {
@@ -70,16 +74,21 @@ function getDataPodium() {
                 for (var i = 0; i < clR; i++) {
                     console.log(i);
                     document.querySelector("#podiumsvg").innerHTML += `<rect class="rect${i}"></rect>`;
-                    $('.rect' + i + '').attr("transform", "translate(" + ((spaceR * i) - (0.5 * space)) + ", 0)");
-                    $('.rect' + i + '').css({
+                    $(`.rect${i}`).attr("transform", "translate(" + ((spaceR * i) - (0.5 * space)) + ", 0)");
+                    $(`.rect${i}`).css({
                         "width": "50px",
                         "height": (trvR[i]) + "px",
                         "y": -(trvR[i]) + 95,
                         "fill": "#0a061d",
                         "stroke": "#87b1ff"
                     });
-                    document.querySelector('.rect' + i + '').innerHTML += `<p class="top${i}>${i}</p>`;
 
+                };
+
+                for (var i = 1; i < 4; i++) {
+                    let pod = [2, 1, 3];
+                    document.querySelector('#podiumsvg').innerHTML += `<text class="top top${i}" x="${22.5 - space}px" y="90px">${pod[i-1]}</text>`;
+                    $(`.top${i}`).attr("transform", "translate(" + ((space * i) - (0.5 * space)) + ", 0)");
                 };
             });
 
