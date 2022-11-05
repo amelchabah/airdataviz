@@ -25,21 +25,22 @@ function getDataPodium() {
 
 
             let idtrv = [];
+            let idcit = [];
             let cit = [];
             let trv = [];
+            let pod = [2, 1, 3];
 
             data.forEach(function viewData(podium) {
-                idtrv.push(podium.top.top2.travellers, podium.top.top1.travellers, podium.top.top3.travellers);
-                cit.push(podium.top.top2.country, podium.top.top1.country, podium.top.top3.country);
+                idtrv.push(podium.top.top1.travellers, podium.top.top2.travellers, podium.top.top3.travellers);
+                idcit.push(podium.top.top1.country, podium.top.top2.country, podium.top.top3.country);
             });
 
-            trv.push(idtrv[0], idtrv[1], idtrv[2]);
+            trv.push(idtrv[1], idtrv[0], idtrv[2]);
+            cit.push(idcit[1], idcit[0], idcit[2]);
             console.log(trv);
 
             let cl = cit.length;
             let space = 150 / trv.length;
-
-
 
             for (var i = 0; i < cl; i++) {
                 console.log(i);
@@ -48,52 +49,56 @@ function getDataPodium() {
                 $(`.rect${i}`).css({
                     "width": "50px",
                     "height": (trv[i]) + "px",
-                    "y": -(trv[i]) + 95,
+                    "y": -(trv[i]) + 100,
                     "fill": "#0a061d",
                     "stroke": "#87b1ff",
                 });
             };
 
-            for (var i = 1; i < 4; i++) {
-                let pod = [2, 1, 3];
-                document.querySelector('#podiumsvg').innerHTML += `<text class="top top${i}" x="${22.5 - space}px" y="90px">${pod[i-1]}</text>`;
-                $(`.top${i}`).attr("transform", "translate(" + ((space * i) - (0.5 * space)) + ", 0)");
-            };
+            for (var i = 0; i < 3; i++) {
+                document.querySelector('#podiumsvg').innerHTML += `<text id="top${i}" class="top top${i}" x="${22.5 - space}px" y="90px">${pod[i]}</text>`;
+                $(`.top${i}`).attr("transform", "translate(" + ((space * (i + 1)) - (0.5 * space)) + ", 0)");
 
+                document.querySelector('#podiumsvg').innerHTML += `<text id="count${i}" class="country count${i}" x="0px" y="${100-trv[i] -2}">${cit[i]}</text>`;
+
+                $(`.count${i}`).attr("transform", "translate(" + ((space * (i + 1)) - (0.5 * space)) + ", 0)");
+                let width = ((50 - document.querySelector(`.count${i}`).clientWidth) / 2) - space;
+                document.querySelector(`.count${i}`).setAttribute("x", width);
+            };
 
             const range = document.querySelector("input[type=\"range\"]");
             range.addEventListener("input", () => {
                 let valR = -(range.value - 2021) + 1;
 
                 let trvR = [];
-                trvR.push(idtrv[valR * 3], idtrv[valR * 3 + 1], idtrv[valR * 3 + 2]);
+                let citR = [];
+                citR.push(idcit[valR * 3 + 1], idcit[valR * 3], idcit[valR * 3 + 2]);
+                trvR.push(idtrv[valR * 3 + 1], idtrv[valR * 3], idtrv[valR * 3 + 2]);
 
-                let clR = cit.length;
-                let spaceR = 150 / trv.length;
+                let clR = citR.length;
+
+                for (var i = 0; i < 3; i++) {
+                    document.getElementById(`top${i}`).innerHTML = `${pod[i]}`;
+                    $(`.top${i}`).attr("transform", "translate(" + ((space * (i + 1)) - (0.5 * space)) + ", 0)");
+
+                    document.getElementById(`count${i}`).innerHTML = `${citR[i]}`;
+                    document.getElementById(`count${i}`).setAttribute("y", `${100-trvR[i] -2}`);
+                };
 
                 for (var i = 0; i < clR; i++) {
                     console.log(i);
-                    document.querySelector("#podiumsvg").innerHTML += `<rect class="rect${i}"></rect>`;
-                    $(`.rect${i}`).attr("transform", "translate(" + ((spaceR * i) - (0.5 * space)) + ", 0)");
+                    $(`.rect${i}`).html(`<rect class="rect${i}"></rect>`);
+                    $(`.rect${i}`).attr("transform", "translate(" + ((space * i) - (0.5 * space)) + ", 0)");
                     $(`.rect${i}`).css({
                         "width": "50px",
                         "height": (trvR[i]) + "px",
-                        "y": -(trvR[i]) + 95,
+                        "y": -(trvR[i]) + 100,
                         "fill": "#0a061d",
-                        "stroke": "#87b1ff"
+                        "stroke": "#87b1ff",
                     });
-
-                };
-
-                for (var i = 1; i < 4; i++) {
-                    let pod = [2, 1, 3];
-                    document.querySelector('#podiumsvg').innerHTML += `<text class="top top${i}" x="${22.5 - space}px" y="90px">${pod[i-1]}</text>`;
-                    $(`.top${i}`).attr("transform", "translate(" + ((space * i) - (0.5 * space)) + ", 0)");
                 };
             });
-
         });
-
 };
 
 

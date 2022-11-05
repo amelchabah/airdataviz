@@ -20,15 +20,15 @@
         "top": {
             "top1": {
                 "country": "France",
-                "travellers": 117.1
+                "travellers": 79.0
             },
             "top2": {
-                "country": "Mexico",
-                "travellers": 51.1
+                "country": "Spain",
+                "travellers": 75.0
             },
             "top3": {
                 "country": "United States",
-                "travellers": 45.0
+                "travellers": 71.0
             }
 
         }

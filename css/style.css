@@ -592,8 +592,20 @@ footer {
     font-size: 2rem;
 }
 
-.top2 {
+.country {
+    font-family: 'Karantina', cursive;
+    fill: #0a061d50;
+    font-size: 0.5rem;
+}
+
+.top1 {
     fill: #f1f7ed;
+}
+
+.gcount {
+    width: 50px;
+    display: block;
+    margin: auto;
 }
 
 
