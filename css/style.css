@@ -551,6 +551,55 @@ footer {
     padding-top: 30px;
 }
 
+#podiumsvg {
+    margin-top: 10vh;
+    padding-left: -25%;
+}
+
+#cursor {
+    margin-top: 10vh;
+    display: block;
+    width: 75%;
+    background: #f1f7ed50;
+    cursor: pointer;
+    color: #f1f7ed;
+    outline: none;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    height: 2px;
+}
+
+#cursor::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 0.25em;
+    height: 2em;
+    border-radius: 10px;
+    background-color: #f1f7ed;
+    opacity: 1;
+}
+
+.ticks {
+    margin-top: 15px;
+    display: flex;
+    width: 77.3%;
+    justify-content: space-between;
+    color: #f1f7ed;
+}
+
+.top {
+    display: flex;
+    justify-content: space-around;
+    color: #f1f7ed;
+    font-size: 7rem;
+    width: 45vw;
+}
+
+.top1,
+.top2,
+.top3 {
+    text-align: center;
+}
+
 
 /* .podiumsvg {
     background: #000;

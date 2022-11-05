@@ -16,49 +16,75 @@ window.onload = function() {
 // fait pas néo le dieuxxxxx
 // remplissage de la grille
 
+// most visited country over the years
+
 function getDataPodium() {
     fetch('./json/data_podium.json')
         .then(res => res.json())
         .then(data => {
 
-            let trv = [];
+
+            let idtrv = [];
             let cit = [];
-            let cla = [];
+            let trv = [];
 
             data.forEach(function viewData(podium) {
-                trv.push(podium.top.top2.travellers);
-                trv.push(podium.top.top1.travellers);
-                trv.push(podium.top.top3.travellers);
-                cit.push(podium.top.top2.country);
-                cit.push(podium.top.top1.country);
-                cit.push(podium.top.top3.country);
-                cla.push(podium.top.top2.class);
-                cla.push(podium.top.top1.class);
-                cla.push(podium.top.top3.class);
+                idtrv.push(podium.top.top2.travellers, podium.top.top1.travellers, podium.top.top3.travellers);
+                cit.push(podium.top.top2.country, podium.top.top1.country, podium.top.top3.country);
             });
 
+            trv.push(idtrv[0], idtrv[1], idtrv[2]);
             console.log(trv);
-            console.log(cit);
-            console.log(cla);
 
             let cl = cit.length;
-            let space = 100 / cit.length + 3;
+            let space = 150 / trv.length;
 
             for (var i = 0; i < cl; i++) {
-                // let r = ;
                 console.log(i);
-                let rect = document.createElement("rect").classList.add(`rect${i}`);
                 document.querySelector("#podiumsvg").innerHTML += `<rect class="rect${i}"></rect>`;
-
-                $('.rect' + i + '').attr("transform", "translate(" + space * i + ", 0)");
+                $('.rect' + i + '').attr("transform", "translate(" + ((space * i) - (0.5 * space)) + ", 0)");
                 $('.rect' + i + '').css({
-                    "width": "33px",
+                    "width": "50px",
                     "height": (trv[i]) + "px",
                     "y": -(trv[i]) + 95,
-                    "fill": "#0a061d"
+                    "fill": "#0a061d",
+                    "stroke": "#87b1ff",
                 });
+
             };
+
+            // document.querySelector('.rect1').innerHTML += `<svg width="17" height="58" viewBox="0 0 17 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+            // <path d="M16.28 49.072V58H1.112V49.072H4.376V9.328H0.92L2.84 0.399998H13.496V49.072H16.28Z" fill="#F1F7ED"/>
+            // </svg>`;
+
+            const range = document.querySelector("input[type=\"range\"]");
+            range.addEventListener("input", () => {
+                let valR = -(range.value - 2021) + 1;
+
+                let trvR = [];
+                trvR.push(idtrv[valR * 3], idtrv[valR * 3 + 1], idtrv[valR * 3 + 2]);
+
+                let clR = cit.length;
+                let spaceR = 150 / trv.length;
+
+                for (var i = 0; i < clR; i++) {
+                    console.log(i);
+                    document.querySelector("#podiumsvg").innerHTML += `<rect class="rect${i}"></rect>`;
+                    $('.rect' + i + '').attr("transform", "translate(" + ((spaceR * i) - (0.5 * space)) + ", 0)");
+                    $('.rect' + i + '').css({
+                        "width": "50px",
+                        "height": (trvR[i]) + "px",
+                        "y": -(trvR[i]) + 95,
+                        "fill": "#0a061d",
+                        "stroke": "#87b1ff"
+                    });
+                    document.querySelector('.rect' + i + '').innerHTML += `<p class="top${i}>${i}</p>`;
+
+                };
+            });
+
         });
+
 };
 
 
