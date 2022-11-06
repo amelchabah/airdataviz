@@ -28,79 +28,50 @@ function getDataPodium() {
             let idcit = [];
             let cit = [];
             let trv = [];
-            let pod = [2, 1, 3];
 
             data.forEach(function viewData(podium) {
                 idtrv.push(podium.top.top1.travellers, podium.top.top2.travellers, podium.top.top3.travellers);
                 idcit.push(podium.top.top1.country, podium.top.top2.country, podium.top.top3.country);
             });
 
-            trv.push(idtrv[1], idtrv[0], idtrv[2]);
-            cit.push(idcit[1], idcit[0], idcit[2]);
+            trv.push(idtrv[0], idtrv[1], idtrv[2]);
+            cit.push(idcit[0], idcit[1], idcit[2]);
             console.log(trv);
+            console.log(cit);
 
-            let cl = cit.length;
-            let space = 150 / trv.length;
-
-            for (var i = 0; i < cl; i++) {
-                console.log(i);
-                document.querySelector("#podiumsvg").innerHTML += `<rect class="rect${i}"></rect>`;
-                $(`.rect${i}`).attr("transform", "translate(" + ((space * i) - (0.5 * space)) + ", 0)");
-                $(`.rect${i}`).css({
-                    "width": "50px",
-                    "height": (trv[i]) + "px",
-                    "y": -(trv[i]) + 100,
-                    "fill": "#0a061d",
-                    "stroke": "#87b1ff",
-                });
-            };
-
-            for (var i = 0; i < 3; i++) {
-                document.querySelector('#podiumsvg').innerHTML += `<text id="top${i}" class="top top${i}" x="${22.5 - space}px" y="90px">${pod[i]}</text>`;
-                $(`.top${i}`).attr("transform", "translate(" + ((space * (i + 1)) - (0.5 * space)) + ", 0)");
-
-                document.querySelector('#podiumsvg').innerHTML += `<text id="count${i}" class="country count${i}" x="0px" y="${100-trv[i] -2}">${cit[i]}</text>`;
-
-                $(`.count${i}`).attr("transform", "translate(" + ((space * (i + 1)) - (0.5 * space)) + ", 0)");
-                let width = ((50 - document.querySelector(`.count${i}`).clientWidth) / 2) - space;
-                document.querySelector(`.count${i}`).setAttribute("x", width);
-            };
+            changeHeight(trv);
+            changeLabel(cit);
 
             const range = document.querySelector("input[type=\"range\"]");
             range.addEventListener("input", () => {
                 let valR = -(range.value - 2021) + 1;
-
                 let trvR = [];
                 let citR = [];
-                citR.push(idcit[valR * 3 + 1], idcit[valR * 3], idcit[valR * 3 + 2]);
-                trvR.push(idtrv[valR * 3 + 1], idtrv[valR * 3], idtrv[valR * 3 + 2]);
-
-                let clR = citR.length;
-
-                for (var i = 0; i < 3; i++) {
-                    document.getElementById(`top${i}`).innerHTML = `${pod[i]}`;
-                    $(`.top${i}`).attr("transform", "translate(" + ((space * (i + 1)) - (0.5 * space)) + ", 0)");
-
-                    document.getElementById(`count${i}`).innerHTML = `${citR[i]}`;
-                    document.getElementById(`count${i}`).setAttribute("y", `${100-trvR[i] -2}`);
-                };
-
-                for (var i = 0; i < clR; i++) {
-                    console.log(i);
-                    $(`.rect${i}`).html(`<rect class="rect${i}"></rect>`);
-                    $(`.rect${i}`).attr("transform", "translate(" + ((space * i) - (0.5 * space)) + ", 0)");
-                    $(`.rect${i}`).css({
-                        "width": "50px",
-                        "height": (trvR[i]) + "px",
-                        "y": -(trvR[i]) + 100,
-                        "fill": "#0a061d",
-                        "stroke": "#87b1ff",
-                    });
-                };
+                citR.push(idcit[valR * 3], idcit[valR * 3 + 1], idcit[valR * 3 + 2]);
+                trvR.push(idtrv[valR * 3], idtrv[valR * 3 + 1], idtrv[valR * 3 + 2]);
+                changeHeight(trvR);
+                changeLabel(citR);
             });
         });
 };
 
+function changeLabel(tab) {
+    // changer la hauteur du .top
+    // boucle for
+    for (let i = 1; i < 4; i++) {
+        $(`.rect${i} .labelpays`).html(tab[i - 1])
+    }
+};
+
+function changeHeight(tab) {
+    // changer la hauteur du .top
+    // boucle for
+    for (let i = 1; i < 4; i++) {
+        $(`.rect${i} .top`).css({
+            "height": (tab[(i - 1)]) + "%",
+        });
+    }
+};
 
 let wrapperBlock = document.querySelector(".container");
 let tab = [];
