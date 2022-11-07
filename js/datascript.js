@@ -7,6 +7,8 @@ import { holidayssvg } from './svg.js';
 import { businesssvg } from './svg.js';
 import { familysvg } from './svg.js';
 import { othersvg } from './svg.js';
+import { mapsvg } from './svg.js';
+
 
 window.onload = function () {
     getDataPodium();
@@ -51,6 +53,7 @@ let $before = $('#before');
 $before.on('click', switchGreen);
 
 
+document.querySelector('.map').innerHTML += mapsvg;
 
 // continents hover
 
