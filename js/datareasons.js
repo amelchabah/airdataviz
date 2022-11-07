@@ -182,14 +182,14 @@ function getDataReasons() {
 };
 
 
-let perholidays = '<h3 class="h3Per black"> 51% </h3>' +
-    '<p> The main reason people travel is for holidays. We can see that almost one in two people travel for the pleasure of going on holiday. <p>';
-let perbusiness = '<h3 class="h3Per black"> 15% </h3>' +
-    '<p> People also travel for work reasons. 15% of travellers travel to work abroad or to set up their own business. <p>';
-let perfamily = '<h3 class="h3Per black"> 27% </h3>' +
-    '<p> The second main reason people travel, after holidays, is for family reasons. Nearly a quarter of people travel for this reason. <p>';
-let perother = '<h3 class="h3Per black"> 7% </h3>' +
-    '<p> There are also many other reasons, they do not travel for business or tourism but probably for a more personal reason like 7% of the people. <p>';
+let perholidays = '<h3 class="h3Per black   "> 51% </h3>' +
+    '<p> The main reason people travel is for holidays : almost one in two people travel for the pleasure of going on holidays. <p>';
+let perbusiness = '<h3 class="h3Per black   "> 15% </h3>' +
+    '<p> People also travel for work reasons : to work abroad or to set up their own business. <p>';
+let perfamily = '<h3 class="h3Per black "> 27% </h3>' +
+    '<p> The second main reason people travel, after holidays, is for family reasons (it\'s nearly a quarter!)<p>';
+let perother = '<h3 class="h3Per black  "> 7% </h3>' +
+    '<p> There are also many other reasons : 7% of people travel to eat, meet people, explore... <p>';
 
 // animation au hover
 
