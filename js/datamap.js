@@ -67,23 +67,23 @@ function opacityRemove() {
 };
 
 function switchRed() {
-    $('#after').attr("class","white").css('transition','0.5s').css('cursor',"default");
-    $('#before').attr("class","red").css('transition','0.5s').css('cursor',"pointer");
-    $('.data-map article').attr("class", "red").css('transition','0.5s');
-    $('#america g').attr("class", "red").css('transition','0.5s');
-    $('#africa g').attr("class", "red").css('transition','0.5s');
-    $('#europe g').attr("class", "red").css('transition','0.5s');
-    $('#south-asia g').attr("class", "red").css('transition','0.5s');
-    $('#north-africa g').attr("class", "red").css('transition','0.5s');
+    $('#after').attr("class", "white").css('transition', '0.5s').css('cursor', "default");
+    $('#before').attr("class", "red").css('transition', '0.5s').css('cursor', "pointer");
+    $('.data-map article').attr("class", "red").css('transition', '0.5s');
+    $('#america g').attr("class", "red").css('transition', '0.5s');
+    $('#africa g').attr("class", "red").css('transition', '0.5s');
+    $('#europe g').attr("class", "red").css('transition', '0.5s');
+    $('#south-asia g').attr("class", "red").css('transition', '0.5s');
+    $('#north-africa g').attr("class", "red").css('transition', '0.5s');
 }
 
 function switchGreen() {
-    $('#after').attr("class", "green").css('transition','0.5s').css('cursor',"pointer");
-    $('#before').attr("class","white").css('transition','0.5s').css('cursor',"default");
-    $('.data-map article').attr("class", "green").css('transition','0.5s');
-    $('#america g').attr("class", "green").css('transition','0.5s');
-    $('#africa g').attr("class", "green").css('transition','0.5s');
-    $('#europe g').attr("class", "green").css('transition','0.5s');
-    $('#south-asia g').attr("class", "green").css('transition','0.5s');
-    $('#north-africa g').attr("class", "green").css('transition','0.5s');
+    $('#after').attr("class", "green").css('transition', '0.5s').css('cursor', "pointer");
+    $('#before').attr("class", "white").css('transition', '0.5s').css('cursor', "default");
+    $('.data-map article').attr("class", "green").css('transition', '0.5s');
+    $('#america g').attr("class", "green").css('transition', '0.5s');
+    $('#africa g').attr("class", "green").css('transition', '0.5s');
+    $('#europe g').attr("class", "green").css('transition', '0.5s');
+    $('#south-asia g').attr("class", "green").css('transition', '0.5s');
+    $('#north-africa g').attr("class", "green").css('transition', '0.5s');
 }
