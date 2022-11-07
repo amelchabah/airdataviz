@@ -2,42 +2,42 @@
     {
         "africa": {
             "year2019": {
-                "number": 18.8
+                "number": 68.1
             },
             "year2020": {
-                "number": 10
+                "number": 18.8
             }
         },
         "northafrica": {
             "year2019": {
-                "number": 19.8
+                "number": 73
             },
             "year2020": {
-                "number": 11
+                "number": 19.8
             }
         },
         "southasia": {
             "year2019": {
-                "number": 59.2
+                "number": 359.5
             },
             "year2020": {
-                "number": 12
+                "number": 59.2
             }
         },
         "europe": {
             "year2019": {
-                "number": 241.9
+                "number": 746
             },
             "year2020": {
-                "number": 13
+                "number": 241.9
             }
         },
         "america": {
             "year2019": {
-                "number": 69.8
+                "number": 219.3
             },
             "year2020": {
-                "number": 14
+                "number": 69.8
             }
         }
     }

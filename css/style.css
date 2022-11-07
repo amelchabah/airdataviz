@@ -93,7 +93,7 @@ body {
 
 .green {
     color: #8ee2c2;
-    fill:#8ee2c2;
+    fill: #8ee2c2;
 }
 
 .bg-green {
@@ -102,7 +102,7 @@ body {
 
 .red {
     color: #ef7373;
-    fill:#ef7373;
+    fill: #ef7373;
 }
 
 .bg-red {
@@ -226,7 +226,6 @@ a:visited {
         transform: translate(0%, -100%);
     }
 }
-
 
 /* blocks */
 
@@ -364,13 +363,15 @@ footer {
     width: 40%;
 }
 
-#before:hover, #after:hover {
+#before:hover,
+#after:hover {
     cursor: pointer;
     color: white;
-    transition:1s ease;
+    transition: 1s ease;
 }
 
-#before, #after {
+#before,
+#after {
     transition: 1s ease;
 }
 

@@ -30,17 +30,20 @@ function getDataMap() {
             });
 
             for (let i = 0; i < 5; i++) {
-                document.querySelector(`.n${i} p`).innerHTML += data2019[i];
+                document.querySelector(`.n${i} p`).innerHTML += data2019[i] + 'M';
             };
 
             document.querySelector('#before').addEventListener("click", () => {
                 for (let i = 0; i < 5; i++) {
-                    document.querySelector(`.n${i} p`).innerHTML = data2019[i];
+                    document.querySelector(`.n${i} p`).innerHTML = data2019[i] + 'M';
                 }
             });
             document.querySelector('#after').addEventListener("click", () => {
                 for (let i = 0; i < 5; i++) {
-                    document.querySelector(`.n${i} p`).innerHTML = data2020[i];
+                    function numVariation(a, b) {
+                        return ((b / a) - 1) * 100;
+                    }
+                    document.querySelector(`.n${i} p`).innerHTML = data2020[i] + 'M<br><span class="red"><b>' + Math.round(numVariation(data2019[i], data2020[i])) + '%</b></span>';
                 }
             });
         });
@@ -134,6 +137,7 @@ function switchGreen() {
     $('#south-asia g').attr("class", "green").css('transition', '0.5s');
     $('#north-africa g').attr("class", "green").css('transition', '0.5s');
 }
+
 
 
 
@@ -350,25 +354,25 @@ let $other = $('.bouton.divother');
 function businessHover() {
     $(".business").html(businesssvg);
     $(".percentage").html(perbusiness);
-    $(this).css("cursor", "pointer").css("color", "#0a061d");
+    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition","0.5s ease");
 };
 
 function holidaysHover() {
     $(".holidays").html(holidayssvg);
     $(".percentage").html(perholidays);
-    $(this).css("cursor", "pointer").css("color", "#0a061d");
+    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition","0.5s ease");
 };
 
 function familyHover() {
     $(".family").html(familysvg);
     $(".percentage").html(perfamily);
-    $(this).css("cursor", "pointer").css("color", "#0a061d");
+    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition","0.5s ease");
 };
 
 function otherHover() {
     $(".other").html(othersvg);
     $(".percentage").html(perother);
-    $(this).css("cursor", "pointer").css("color", "#0a061d");
+    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition","0.5s ease");
 };
 
 function evidenceRemoveFamily() {
