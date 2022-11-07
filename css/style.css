@@ -665,12 +665,6 @@ footer {
     font-size: 0.5rem;
 }
 
-.gcount {
-    width: 50px;
-    display: block;
-    margin: auto;
-}
-
 .podium {
     display: flex;
     flex-direction: column;
@@ -680,7 +674,7 @@ footer {
 .labelpays {
     text-align: center;
     font-family: 'Karantina', cursive;
-    color: #0a061d88;
+    color: #0a061d;
     font-size: 2rem;
     margin-bottom: 10px;
 }
@@ -709,6 +703,11 @@ footer {
     gap: 1%;
     width: 50%;
     margin: 0 auto;
+    height: 100%;
+}
+
+.podiumdesc {
+    height: 100%;
 }
 
 .control-date {

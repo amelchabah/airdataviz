@@ -28,32 +28,83 @@ function getDataPodium() {
             let idcit = [];
             let cit = [];
             let trv = [];
+            let years = [];
 
             data.forEach(function viewData(podium) {
                 idtrv.push(podium.top.top1.travellers, podium.top.top2.travellers, podium.top.top3.travellers);
                 idcit.push(podium.top.top1.country, podium.top.top2.country, podium.top.top3.country);
+                years.push(podium.year);
             });
+
 
             trv.push(idtrv[0], idtrv[1], idtrv[2]);
             cit.push(idcit[0], idcit[1], idcit[2]);
-            console.log(trv);
-            console.log(cit);
 
             changeHeight(trv);
             changeLabel(cit);
+
+            $(".rect1").hover(function() {
+                hoverPodium(2022, cit[0], trv[0]);
+                console.log("rect1");
+            }).mouseleave(function() {
+                removePodium();
+            });
+
+            $(".rect2").hover(function() {
+                hoverPodium(2022, cit[1], trv[1]);
+                console.log("rect2");
+            }).mouseleave(function() {
+                removePodium();
+            });
+
+            $(".rect3").hover(function() {
+                hoverPodium(2022, cit[2], trv[2]);
+                console.log("rect3");
+            }).mouseleave(function() {
+                removePodium();
+            });
 
             const range = document.querySelector("input[type=\"range\"]");
             range.addEventListener("input", () => {
                 let valR = -(range.value - 2021) + 1;
                 let trvR = [];
                 let citR = [];
+                let yearsR = [];
                 citR.push(idcit[valR * 3], idcit[valR * 3 + 1], idcit[valR * 3 + 2]);
                 trvR.push(idtrv[valR * 3], idtrv[valR * 3 + 1], idtrv[valR * 3 + 2]);
+                yearsR = years[valR];
                 changeHeight(trvR);
                 changeLabel(citR);
+
+                $(".rect1").hover(function() {
+                    hoverPodium(yearsR, citR[0], trvR[0]);
+                }).mouseleave(function() {
+                    removePodium();
+                });
+
+                $(".rect2").hover(function() {
+                    hoverPodium(yearsR, citR[1], trvR[1]);
+                }).mouseleave(function() {
+                    removePodium();
+                });
+
+                $(".rect3").hover(function() {
+                    hoverPodium(yearsR, citR[2], trvR[2]);
+                }).mouseleave(function() {
+                    removePodium();
+                });
+
             });
         });
 };
+
+function hoverPodium(years, cit, trv) {
+    $(".desc").html("<h3>In " + years + "</h3><p>" + cit + " was visited by</p><p>" + trv + " million tourists</p>");
+}
+
+function removePodium() {
+    $(".desc").html(" ");
+}
 
 function changeLabel(tab) {
     // changer la hauteur du .top
@@ -72,6 +123,21 @@ function changeHeight(tab) {
         });
     }
 };
+
+
+//while hover .podium .rect1 use hoverPodium() with the value of the range
+
+// //while hover .podium .rect2 use hoverPodium() with the value of the range
+// $(".podium .rect2").hover(function() {
+//     hoverPodium();
+// });
+
+// //while hover .podium .rect3 use hoverPodium() with the value of the range
+// $(".podium .rect3").hover(function() {
+//     hoverPodium();
+// });
+
+
 
 let wrapperBlock = document.querySelector(".container");
 let tab = [];
