@@ -1,25 +1,44 @@
 [
     {
-        "year": 2019,
-        "stats": {
-                "continent": "africa",
+        "africa": {
+            "year2019": {
                 "number": 18.8
             },
-            {
-                "continent": "north-africa",
+            "year2020": {
+                "number": 10
+            }
+        },
+        "northafrica": {
+            "year2019": {
                 "number": 19.8
             },
-            {
-                "continent": "south-asia",
+            "year2020": {
+                "number": 11
+            }
+        },
+        "southasia": {
+            "year2019": {
                 "number": 59.2
             },
-            {
-                "continent": "europe",
+            "year2020": {
+                "number": 12
+            }
+        },
+        "europe": {
+            "year2019": {
                 "number": 241.9
             },
-            {
-                "continent": "america",
+            "year2020": {
+                "number": 13
+            }
+        },
+        "america": {
+            "year2019": {
                 "number": 69.8
+            },
+            "year2020": {
+                "number": 14
             }
         }
-    ]
+    }
+]
