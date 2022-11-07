@@ -45,24 +45,27 @@ function getDataPodium() {
 
             $(".rect1").hover(function() {
                 hoverPodium(2022, cit[0], trv[0]);
-                console.log("rect1");
+                evidencePodium("rect1");
             }).mouseleave(function() {
                 removePodium();
-            });
+                evidenceRemovePodium("rect1");
+            }).css("cursor", "pointer");
 
             $(".rect2").hover(function() {
                 hoverPodium(2022, cit[1], trv[1]);
-                console.log("rect2");
+                evidencePodium("rect2");
             }).mouseleave(function() {
                 removePodium();
-            });
+                evidenceRemovePodium("rect2");
+            }).css("cursor", "pointer");
 
             $(".rect3").hover(function() {
                 hoverPodium(2022, cit[2], trv[2]);
-                console.log("rect3");
+                evidencePodium("rect3");
             }).mouseleave(function() {
                 removePodium();
-            });
+                evidenceRemovePodium("rect3");
+            }).css("cursor", "pointer");
 
             const range = document.querySelector("input[type=\"range\"]");
             range.addEventListener("input", () => {
@@ -78,33 +81,49 @@ function getDataPodium() {
 
                 $(".rect1").hover(function() {
                     hoverPodium(yearsR, citR[0], trvR[0]);
+                    evidencePodium("rect1");
                 }).mouseleave(function() {
                     removePodium();
-                });
+                    evidenceRemovePodium("rect1");
+                }).css("cursor", "pointer")
 
                 $(".rect2").hover(function() {
                     hoverPodium(yearsR, citR[1], trvR[1]);
+                    evidencePodium("rect2");
                 }).mouseleave(function() {
                     removePodium();
-                });
+                    evidenceRemovePodium("rect2");
+                }).css("cursor", "pointer");
 
                 $(".rect3").hover(function() {
                     hoverPodium(yearsR, citR[2], trvR[2]);
+                    evidencePodium("rect3");
                 }).mouseleave(function() {
                     removePodium();
-                });
+                    evidenceRemovePodium("rect3");
+                }).css("cursor", "pointer");
+
 
             });
         });
 };
 
 function hoverPodium(years, cit, trv) {
-    $(".desc").html("<h3>In " + years + "</h3><p>" + cit + " was visited by</p><p>" + trv + " million tourists</p>");
-}
+    $(".desc").html("<h3 class=\"descyear\">In <span class=\"white\"" + years + "</span></h3><p class=\"desccit\">" + cit + " was visited by</p><h3 class=\"desctourist\">" + trv + "</h3><p class=\"inline desccit \"> million tourists</p>");
+};
 
 function removePodium() {
     $(".desc").html(" ");
-}
+};
+
+function evidencePodium(rect) {
+    $(".podium").css("opacity", "60%");
+    $(`.${rect}`).css("opacity", "100%");
+};
+
+function evidenceRemovePodium(rect) {
+    $(".podium").css("opacity", "100%");
+};
 
 function changeLabel(tab) {
     // changer la hauteur du .top
