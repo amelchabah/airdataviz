@@ -93,10 +93,20 @@ body {
 
 .green {
     color: #8ee2c2;
+    fill:#8ee2c2;
 }
 
 .bg-green {
     background-color: #8ee2c2;
+}
+
+.red {
+    color: #ef7373;
+    fill:#ef7373;
+}
+
+.bg-red {
+    background-color: #ef7373;
 }
 
 .yellow {
@@ -354,6 +364,16 @@ footer {
     width: 40%;
 }
 
+#before:hover, #after:hover {
+    cursor: pointer;
+    color: white;
+    transition:1s ease;
+}
+
+#before, #after {
+    transition: 1s ease;
+}
+
 
 /* map */
 
@@ -370,8 +390,7 @@ footer {
 #africa,
 #europe,
 #north-africa,
-#south-asia,
-#australia {
+#south-asia {
     fill: #8ee2c2;
     cursor: pointer;
 }
@@ -380,8 +399,7 @@ footer {
 #africa:hover,
 #europe:hover,
 #north-africa:hover,
-#south-asia:hover,
-#australia:hover {
+#south-asia:hover {
     fill: #8ee2c2;
 }
 
@@ -554,6 +572,7 @@ footer {
 
 .flexcontent {
     display: flex;
+    gap: 4rem;
 }
 
 .data-reasons article h3 {
@@ -579,7 +598,7 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0 30px;
+    width: 50%;
 }
 
 .h3Per {

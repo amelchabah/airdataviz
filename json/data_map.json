@@ -1,0 +1,25 @@
+[
+    {
+        "year": 2019,
+        "stats": {
+                "continent": "africa",
+                "number": 18.8
+            },
+            {
+                "continent": "north-africa",
+                "number": 19.8
+            },
+            {
+                "continent": "south-asia",
+                "number": 59.2
+            },
+            {
+                "continent": "europe",
+                "number": 241.9
+            },
+            {
+                "continent": "america",
+                "number": 69.8
+            }
+        }
+    ]
