@@ -254,7 +254,7 @@ function getDataPodium() {
 };
 
 function hoverPodium(years, cit, trv) {
-    $(".desc").html("<h3 class=\"descyear\">In <span class=\"white\"" + years + "</span></h3><p class=\"desccit\">" + cit + " was visited by</p><h3 class=\"desctourist\">" + trv + "</h3><p class=\"inline desccit \"> million tourists</p>");
+    $(".desc").html("<h3 class=\"descyear\">In " + years + "</h3><p class=\"desccit\">" + cit + " was visited by</p><h3 class=\"desctourist\">" + trv + "</h3><p class=\"inline desccit \"> million tourists</p>");
 };
 
 function removePodium() {
