@@ -4,35 +4,53 @@
 let $continent = $('.continent');
 $continent.on('mouseenter', opacityOnHover).on('mouseleave', opacityRemove);
 
-let $latinAmerica = $('#latin-america'),
-    $latinAmericaTooltip = $('#latin-america-tooltip');
+let $America = $('#america'),
+    $AmericaTooltip = $('#america-tooltip');
 
-$latinAmerica.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
+$America.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
 
-let $westAfrica = $('#west-africa'),
-    $westAfricaTooltip = $('#west-africa-tooltip');
+let $europe = $('#europe'),
+    $europeTooltip = $('#europe-tooltip');
 
-$westAfrica.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
+$europe.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
+
+
+// let $westAfrica = $('#west-africa'),
+//     $westAfricaTooltip = $('#west-africa-tooltip');
+
+// $westAfrica.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
 
 let $northAfrica = $('#north-africa'),
     $northAfricaTooltip = $('#north-africa-tooltip');
 
 $northAfrica.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
 
-let $southAfrica = $('#south-africa'),
-    $southAfricaTooltip = $('#south-africa-tooltip');
+// let $southAfrica = $('#south-africa'),
+//     $southAfricaTooltip = $('#south-africa-tooltip');
 
-$southAfrica.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
+// $southAfrica.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
 
-var $russia = $('#russia'),
-    $russiaTooltip = $('#russia-tooltip');
+let $Africa = $('#africa'),
+    $AfricaTooltip = $('#africa-tooltip');
 
-$russia.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
+$Africa.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
+
+
+// var $russia = $('#russia'),
+//     $russiaTooltip = $('#russia-tooltip');
+
+// $russia.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
 
 var $southAsia = $('#south-asia'),
     $southAsiaTooltip = $('#south-asia-tooltip');
 
 $southAsia.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
+
+var $australia = $('#australia'),
+    $australiaTooltip = $('#australia-tooltip');
+
+$australia.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
+
 
 function showTooltip(event) {
     var el = event.currentTarget.id,

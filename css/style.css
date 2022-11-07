@@ -169,6 +169,23 @@ p {
     font-weight: 400;
 }
 
+/* links */
+
+a {
+    font-family: 'work sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+a:visited {
+    color: inherit;
+}
+
+
+
+
 
 /* animations */
 
@@ -176,9 +193,11 @@ p {
     0% {
         transform: translate(-50%, 110%);
     }
+
     30% {
         transform: translate(-50%, 50%);
     }
+
     100% {
         transform: translate(-50%, 0%);
     }
@@ -188,9 +207,11 @@ p {
     0% {
         transform: translate(0%, 0%);
     }
+
     50% {
         transform: translate(0%, 0%);
     }
+
     100% {
         transform: translate(0%, -100%);
     }
@@ -200,11 +221,16 @@ p {
 /* blocks */
 
 header {
+    text-align: center;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+header div {
+    margin-top: 3rem;
 }
 
 section {
@@ -213,6 +239,7 @@ section {
 
 footer {
     height: 100vh;
+    padding: 3rem;
 }
 
 
@@ -278,6 +305,24 @@ footer {
 }
 
 
+.start {
+    background-color: white;
+    text-transform: uppercase;
+    color: #0a061d;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    transition: 0.2s ease;
+
+}
+
+.start:hover {
+    cursor: pointer;
+    background-color: #0a061d;
+    color: white;
+    transition: 0.2s ease;
+}
+
+
 /* about */
 
 #about {
@@ -321,21 +366,22 @@ footer {
     stroke-width: 6px;
 }
 
-#latin-america,
-#south-africa,
-#west-africa,
+#america,
+#africa,
+#europe,
 #north-africa,
-#russia,
-#south-asia {
+#south-asia,
+#australia {
     fill: #8ee2c2;
     cursor: pointer;
 }
 
-#south-africa:hover,
-#russia:hover,
-#west-africa:hover,
+#america:hover,
+#africa:hover,
+#europe:hover,
 #north-africa:hover,
-#south-asia:hover {
+#south-asia:hover,
+#australia:hover {
     fill: #8ee2c2;
 }
 
@@ -650,4 +696,65 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media screen and (max-width:900px) {
+
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    /* h3 {
+        font-size: 1.3rem;
+    } */
+
+    h4 {
+        font-size: 1.1rem;
+    }
+
+    h5 {
+        font-size: 0.9rem;
+    }
+
+    h6,
+    p {
+        font-size: 0.8rem;
+    }
+
+    section {
+        flex-direction: column;
+    }
+
+    #about {
+        padding: 2rem;
+    }
+
+    #about h4 {
+        width: 100%;
+    }
+
+    .data-map {
+        padding: 2rem;
+        gap: 2rem;
+    }
+
+    .data-map article {
+        width: 100%;
+    }
+
+    .data-reasons {
+        flex-wrap: wrap
+    }
+
+    .data-reasons .flexcontent {
+        flex-direction: column;
+    }
+
+    .data-reasons .percentage {
+        padding: 1rem 0;
+    }
 }
