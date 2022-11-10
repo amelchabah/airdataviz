@@ -1,4 +1,5 @@
 // déclaration des svg
+import { loadingplanesvg } from './svg.js';
 import { blanksvgfamily } from './svg.js';
 import { blanksvgbusiness } from './svg.js';
 import { blanksvgholidays } from './svg.js';
@@ -8,6 +9,9 @@ import { businesssvg } from './svg.js';
 import { familysvg } from './svg.js';
 import { othersvg } from './svg.js';
 import { mapsvg } from './svg.js';
+
+
+document.querySelector('#loader').innerHTML += loadingplanesvg;
 
 
 window.onload = function () {
@@ -54,6 +58,7 @@ $after.on('click', switchRed);
 
 let $before = $('#before');
 $before.on('click', switchGreen);
+
 
 
 document.querySelector('.map').innerHTML += mapsvg;
@@ -147,18 +152,7 @@ function switchGreen() {
 
 
 
-
-
-
-
-
 // podium
-
-
-
-
-
-
 
 
 

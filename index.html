@@ -49,30 +49,6 @@
     <div id="splash">
         <div class="anim">
             <div id="loader">
-                <svg version="1.1" width="60px" height="70px" viewBox="0 0 60 70">
-                    <defs>
-                        <filter id="f1" x="0" y="0">
-                            <feGaussianBlur in="SourceGraphic" stdDeviation="2" />
-                        </filter>
-                    </defs>
-                    <g id="airplane">
-                        <path fill="#0a061d" d="M0.677,20.977l4.355,1.631c0.281,0.104,0.579,0.162,0.88,0.16l9.76-0.004L30.46,41.58c0.27,0.34,0.679,0.545,1.112,0.541
-                h1.87c0.992,0,1.676-0.992,1.322-1.918l-6.643-17.439l6.914,0.002l6.038,6.037c0.265,0.266,0.624,0.412,0.999,0.418l1.013-0.004
-                c1.004-0.002,1.684-1.012,1.312-1.938l-2.911-7.277l2.912-7.278c0.372-0.928-0.313-1.941-1.313-1.938h1.017
-                c-0.375,0-0.732,0.15-0.996,0.414l-6.039,6.039h-6.915l6.646-17.443c0.354-0.926-0.33-1.916-1.321-1.914l-1.87-0.004
-                c-0.439,0.004-0.843,0.203-1.112,0.543L15.677,17.24l-9.765-0.002c-0.3,0.002-0.597,0.055-0.879,0.16L0.678,19.03
-                C-0.225,19.36-0.228,20.637,0.677,20.977z" transform="translate(44,0) rotate(90 0 0)" />
-                    </g>
-                    <g id="shadow" transform="scale(.9)">
-                        <path fill="#000" fill-opacity="0.3" d="M0.677,20.977l4.355,1.631c0.281,0.104,0.579,0.162,0.88,0.16l9.76-0.004L30.46,41.58c0.27,0.34,0.679,0.545,1.112,0.541
-                    h1.87c0.992,0,1.676-0.992,1.322-1.918l-6.643-17.439l6.914,0.002l6.038,6.037c0.265,0.266,0.624,0.412,0.999,0.418l1.013-0.004
-                    c1.004-0.002,1.684-1.012,1.312-1.938l-2.911-7.277l2.912-7.278c0.372-0.928-0.313-1.941-1.313-1.938h1.017
-                    c-0.375,0-0.732,0.15-0.996,0.414l-6.039,6.039h-6.915l6.646-17.443c0.354-0.926-0.33-1.916-1.321-1.914l-1.87-0.004
-                    c-0.439,0.004-0.843,0.203-1.112,0.543L15.677,17.24l-9.765-0.002c-0.3,0.002-0.597,0.055-0.879,0.16L0.678,19.03
-                    C-0.225,19.36-0.228,20.637,0.677,20.977z" transform="translate(64,30) rotate(90 0 0)"
-                            filter="url(#f1)" />
-                    </g>
-                </svg>
             </div>
         </div>
     </div>
@@ -80,7 +56,7 @@
     <!-- about -->
 
     <section class="scrollify bg-blue" id="about">
-        <article class="about black">
+        <article class="about black" data-aos="fade-in" data-aos-delay="500">
             <h2>About the work</h2>
             <h3>Dataviz, a student project</h3>
             <h4>This data visualization represents the evolution of international tourism over the 2010s, till today. As you scroll, discover the numbers of tourism through interactive and animated designs. This short project was made by three multimedia students on their second year of bachelor. Scroll and enjoy your trip!</h4>
@@ -134,10 +110,10 @@
 
     <section class="scrollify data-podium bg-blue">
         <div class="divsvgpodium">
-            <h2 class="black"><span class="white"> TOP 3</span> MOST VISITED COUNTRIES <span class="white">OVER THE
+            <h2 class="black" data-aos="fade-in" data-aos-delay="500"><span class="white"> TOP 3</span> MOST VISITED COUNTRIES <span class="white">OVER THE
                     YEARS</span></h2>
             <div class="podiumdesc">
-                <div class="podiumwrap">
+                <div class="podiumwrap" data-aos="fade-in" data-aos-delay="1000">
                     <div class="podium rect2">
                         <div class=" labelpays">
                             unknown
@@ -167,7 +143,7 @@
 
                 </div>
             </div>
-            <div class="control-date">
+            <div class="control-date" data-aos="fade-in" data-aos-delay="1500">
                 <input id="cursor" type="range" min="2012" max="2022" step="1" value="2022">
                 <div class="ticks">
                     <p class="date">2012</p>
@@ -190,9 +166,9 @@
 
     <section class="scrollify data-reasons bg-yellow">
         <article>
-            <h2 class="black">REASONS TO VISIT</h2>
-            <p class="black"> HOVER TO SEE MORE... </p>
-            <div class="flexcontent">
+            <h2 class="black" data-aos="fade-in" data-aos-delay="500">REASONS TO VISIT</h2>
+            <p class="black" data-aos="fade-in" data-aos-delay="1000"> HOVER TO SEE MORE... </p>
+            <div class="flexcontent" data-aos="fade-in" data-aos-delay="1000">
                 <div class="h3Buttons">
                     <h3 class="bouton divholidays white">HOLIDAYS</h3>
                     <h3 class="bouton divfamily white">FAMILY</h3>
@@ -203,14 +179,14 @@
                 </div>
             </div>
         </article>
-        <div class="container">
+        <div class="container" data-aos="fade-in" data-aos-delay="1500">
         </div>
     </section>
 
 
     <footer class="scrollify bg-black">
-        <h3 class="white">AIR DATAVIZ</h3>
-        <h4 class="white">A student project by Eléa Crunchant, Amel Chabah & Ambre Lascoux</h4>
+        <h3 class="white" data-aos="fade-in" data-aos-delay="500">AIR DATAVIZ</h3>
+        <h4 class="white" data-aos="fade-in" data-aos-delay="1000">A student project by Eléa Crunchant, Amel Chabah & Ambre Lascoux</h4>
     </footer>
 </body>
 
