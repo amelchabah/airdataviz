@@ -186,14 +186,13 @@ a {
     font-weight: 800;
     font-size: 1.1rem;
     line-height: 1.5;
+}
+
+a, a:hover, a:active, a:visited, a:focus {
     text-decoration: none;
-}
-
-a:visited {
     color: inherit;
+    cursor: pointer;
 }
-
-
 
 
 
