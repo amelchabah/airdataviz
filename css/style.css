@@ -5,7 +5,7 @@
 - animations
 - blocs
 - data sections
-- responsive pour 1200px, 1024px, 900px et 770px
+- responsive
 */
 
 *,
@@ -258,6 +258,10 @@ section {
 footer {
     height: 100vh;
     padding: 6rem;
+}
+
+footer article {
+    margin-bottom: 3rem;
 }
 
 
