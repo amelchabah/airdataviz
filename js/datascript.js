@@ -22,10 +22,77 @@ document.querySelector('#loader').innerHTML += loadingplanesvg;
 
 // lancement des fonctions au chargement de la page
 window.onload = function () {
+    getDataDeparture();
+    getDataMap();
     getDataPodium();
     getDataReasons();
-    getDataMap();
 };
+
+
+
+// injection des données des fichiers json : carte
+function getDataDeparture() {
+    fetch('./json/data_departure.json')
+        .then(res => res.json())
+        .then(data => {
+
+            // injection (push) des données dans deux tableaux
+            let positions = [];
+            let countries = [];
+            let visitors = [];
+
+
+            data.forEach(function viewDataDeparture(departure) {
+                positions.push(departure.n1.position, departure.n2.position, departure.n3.position, departure.n4.position, departure.n5.position, departure.n6.position, departure.n7.position, departure.n8.position, departure.n9.position, departure.n10.position);
+
+                countries.push(departure.n1.country, departure.n2.country, departure.n3.country, departure.n4.country, departure.n5.country, departure.n6.country, departure.n7.country, departure.n8.country, departure.n9.country, departure.n10.country);
+
+                visitors.push(departure.n1.visitors, departure.n2.visitors, departure.n3.visitors, departure.n4.visitors, departure.n5.visitors, departure.n6.visitors, departure.n7.visitors, departure.n8.visitors, departure.n9.visitors, departure.n10.visitors);
+
+            });
+
+            // injection des données des tableaux dans les 5 balises correspondant aux 5 régions dans index.html
+            for (let i = 0; i < 10; i++) {
+                document.querySelector(`tbody`).innerHTML += `<tr data-aos="flip-down" data-aos-delay="1000" data-aos-duration="1000"><td class="position${i}"></td><td class="country${i}"></td><td class="visitors${i}"></td></tr>`;
+                document.querySelector(`.position${i}`).innerHTML += positions[i];
+                document.querySelector(`.country${i}`).innerHTML += countries[i];
+                document.querySelector(`.visitors${i}`).innerHTML += visitors[i] + ' Millions';
+
+            };            
+
+            // // for (let i = 0; i < 10; i++) {
+            // //     document.querySelector(`.country`).innerHTML += countries;
+            // // };
+
+            // // au clic du bouton "avant", injecter les données de 2019
+            // document.querySelector('#before').addEventListener("click", () => {
+            //     for (let i = 0; i < 5; i++) {
+            //         document.querySelector(`.n${i} p`).innerHTML = data2019[i] + 'M';
+            //     }
+            // });
+
+            // // au clic du bouton "après", injecter les données de 2020
+            // document.querySelector('#after').addEventListener("click", () => {
+            //     for (let i = 0; i < 5; i++) {
+            //         // calcul du taux de variation entre 2019 et 2020, arrondi au dixième
+            //         function numVariation(a, b) {
+            //             return ((b / a) - 1) * 100;
+            //         }
+            //         document.querySelector(`.n${i} p`).innerHTML = data2020[i] + 'M<br><span class="red"><b>' + Math.round(numVariation(data2019[i], data2020[i])) + '%</b></span>';
+            // }
+            // });
+        });
+}
+
+
+
+
+
+
+
+
+
+
 
 // injection des données des fichiers json : carte
 function getDataMap() {
