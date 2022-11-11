@@ -17,7 +17,7 @@
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Staatliches&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Staatliches&family=VT323&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
 
     <script src="js/datascript.js" type="module" defer></script>
@@ -31,7 +31,9 @@
     <!-- jquery and scrollify -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.js" integrity="sha512-CX7sDOp7UTAq+i1FYIlf9Uo27x4os+kGeoT7rgwvY+4dmjqV0IuE/Bl5hVsjnQPQiTOhAX1O2r2j5bjsFBvv/A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.js" integrity="sha512-2rSKyHme2mrplfIGsA8bFYAYddQ66qR+Dh71OrNZsZOtMdCYa8V1lJvl2mr/qzwcMIs20ddYz4JLiBmwS2K7Iw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.js"
+        integrity="sha512-2rSKyHme2mrplfIGsA8bFYAYddQ66qR+Dh71OrNZsZOtMdCYa8V1lJvl2mr/qzwcMIs20ddYz4JLiBmwS2K7Iw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
     <title>AIR DATAVIZ</title>
 </head>
@@ -61,6 +63,34 @@
 
         </article>
     </section>
+
+    <!-- departure -->
+
+    <section class="scrollify data-departure bg-yellow">
+        <div class="departure-board">
+            <div class="departure-title">
+                <img src="/img/icons/departureplane.png">
+                <h3>Departure board</h3>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="position">Time</th>
+                        <th class="country">Destination</th>
+                        <th class="visitors">Visitors</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <article class="black">
+            <h2>Top 10 international arrivals of 2022</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem inventore cum, dolores voluptatum reiciendis numquam, maxime quo tenetur laboriosam obcaecati nisi! Eligendi saepe maiores ullam! Tempore nobis ipsam eligendi fugit.</p>
+        </article>
+    </section>
+
+
 
     <!-- world map -->
     <section class="scrollify data-map bg-black">
@@ -181,7 +211,7 @@
 
     <!-- reasons to visit -->
 
-    <section class="scrollify data-reasons bg-yellow">
+    <section class="scrollify data-reasons bg-green">
         <article>
             <div class="titles">
                 <h2 class="black" data-aos="fade-in" data-aos-delay="500">Reasons to travel</h2>
