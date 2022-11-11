@@ -246,12 +246,12 @@ function getDataPodium() {
 
                 // boucle
                 for (let i = 0; i < 3; i++) {
-                    $(`.rect${i+1}`).hover(function () {
+                    $(`.rect${i + 1}`).hover(function () {
                         hoverPodium(yearsR, citR[i], trvR[i]);
-                        evidencePodium(`rect${i+1}`);
+                        evidencePodium(`rect${i + 1}`);
                     }).mouseleave(function () {
                         removePodium();
-                        evidenceRemovePodium(`rect${i+1}`);
+                        evidenceRemovePodium(`rect${i + 1}`);
                     }).css("cursor", "pointer");
                 }
 
@@ -337,21 +337,27 @@ function changeHeight(tab) {
 // reasons to travel
 
 
-let wrapperBlock = document.querySelector(".container");
-let tab = [];
-
 function getDataReasons() {
     fetch('./json/data_reasons.json')
         .then(res => res.json())
         .then(data => {
+
+            // injections des données : svg dans le container et chiffres dans un tableau
+
+            let wrapperBlock = document.querySelector(".container");
+            let tab = [];
+
+
             data.forEach(function viewData(reason) {
                 for (var i = 0; i < reason.percentage; i++) {
                     tab.push(reason.reason);
                 }
                 // shuffleArray(tab);
+                // repartition au hasard des svg
                 tab.sort(function (a, b) { return Math.random() - 0.5 })
             })
 
+            // ajout des svg correspondant dans chaque case du container
             tab.forEach(function (reason) {
                 var square = document.createElement("div");
                 square.classList.add("" + reason + "");
@@ -360,7 +366,7 @@ function getDataReasons() {
         });
 };
 
-
+// descriptions des données
 let perholidays = '<h3 class="h3Per black   "> 51% </h3>' +
     '<p> The main reason people travel is for holidays : almost one in two people travel for the pleasure of going on holidays. <p>';
 let perbusiness = '<h3 class="h3Per black   "> 15% </h3>' +
@@ -370,13 +376,12 @@ let perfamily = '<h3 class="h3Per black "> 27% </h3>' +
 let perother = '<h3 class="h3Per black  "> 7% </h3>' +
     '<p> There are also many other reasons : 7% of people travel to eat, meet people, explore... <p>';
 
-// animation au hover
 
+// animations et affichages de descriptions au hover
 let $holidays = $('.bouton.divholidays');
 let $business = $('.bouton.divbusiness');
 let $family = $('.bouton.divfamily');
 let $other = $('.bouton.divother');
-
 
 function businessHover() {
     $(".business").html(businesssvg);
