@@ -2,7 +2,7 @@
 AOS.init();
 
 // smooth scroll
-$(function () {
+$(function() {
     $.scrollify({
         section: ".scrollify",
         scrollSpeed: 200,
@@ -21,7 +21,7 @@ import { mapsvg } from './svg.js';
 document.querySelector('#loader').innerHTML += loadingplanesvg;
 
 // lancement des fonctions au chargement de la page
-window.onload = function () {
+window.onload = function() {
     getDataDeparture();
     getDataMap();
     getDataPodium();
@@ -263,11 +263,11 @@ function getDataPodium() {
 
             // boucle
             for (let i = 1; i < 4; i++) {
-                $(`.rect${i}`).hover(function () {
-                    hoverPodium(2022, cit[i], trv[i]);
+                $(`.rect${i}`).hover(function() {
+                    hoverPodium(trv[i - 1], i);
                     evidencePodium(`rect${i}`);
-                }).mouseleave(function () {
-                    removePodium();
+                }).mouseleave(function() {
+                    removePodium(i);
                     evidenceRemovePodium(`rect${i}`);
                 }).css("cursor", "pointer");
             }
@@ -310,11 +310,11 @@ function getDataPodium() {
 
                 // boucle
                 for (let i = 0; i < 3; i++) {
-                    $(`.rect${i + 1}`).hover(function () {
-                        hoverPodium(yearsR, citR[i], trvR[i]);
+                    $(`.rect${i + 1}`).hover(function() {
+                        hoverPodium(trvR[i], i + 1);
                         evidencePodium(`rect${i + 1}`);
-                    }).mouseleave(function () {
-                        removePodium();
+                    }).mouseleave(function() {
+                        removePodium(i + 1);
                         evidenceRemovePodium(`rect${i + 1}`);
                     }).css("cursor", "pointer");
                 }
@@ -346,12 +346,13 @@ function getDataPodium() {
         });
 };
 
-function hoverPodium(years, cit, trv) {
-    $(".desc").html("<h3 class=\"descyear\">In " + years + "</h3><p class=\"desccit\">" + cit + " was visited by</p><h3 class=\"desctourist\">" + trv + "</h3><p class=\"inline desccit \"> million tourists</p>");
+function hoverPodium(trav, i) {
+    $(`.nbtourists${i}`).html(`${trav} million`);
 };
 
-function removePodium() {
+function removePodium(i) {
     $(".desc").html(" ");
+    $(`.nbtourists${i}`).html(" ");
 };
 
 function evidencePodium(rect) {
@@ -418,11 +419,11 @@ function getDataReasons() {
                 }
                 // shuffleArray(tab);
                 // repartition au hasard des svg
-                tab.sort(function (a, b) { return Math.random() - 0.5 })
+                tab.sort(function(a, b) { return Math.random() - 0.5 })
             })
 
             // ajout des svg correspondant dans chaque case du container
-            tab.forEach(function (reason) {
+            tab.forEach(function(reason) {
                 var square = document.createElement("div");
                 square.classList.add("" + reason + "");
                 wrapperBlock.appendChild(square).innerHTML += '<svg id="blanksvg' + reason + '" width="50" height="50" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 55.3199C44.577 55.3199 48.8126 53.8583 52.2656 51.3765C54.2195 49.9721 57.0585 50.0213 58.2664 52.1023C61.4644 57.6118 63.3766 64.5997 63.3766 72.203C56.8831 76.2729 52.9106 80 40 80C27.0894 80 21.7336 75.5951 16.6234 72.203C16.6234 64.5997 18.5356 57.6118 21.7336 52.1023C22.9415 50.0213 25.7805 49.9721 27.7344 51.3765C31.1874 53.8583 35.423 55.3199 40 55.3199Z" fill="#F1F7ED"/><path d="M58.1818 33.7662C58.1818 43.8078 50.0415 51.9481 40 51.9481C29.9585 51.9481 21.8182 43.8078 21.8182 33.7662C21.8182 23.7247 29.9585 15.5844 40 15.5844C50.0415 15.5844 58.1818 23.7247 58.1818 33.7662Z" fill="#F1F7ED"/></svg>';
