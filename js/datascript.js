@@ -11,10 +11,7 @@ $(function () {
 
 // importation des svg du fichier svg.js
 import { loadingplanesvg } from './svg.js';
-import { blanksvgfamily } from './svg.js';
-import { blanksvgbusiness } from './svg.js';
-import { blanksvgholidays } from './svg.js';
-import { blanksvgother } from './svg.js';
+import { blanksvg } from './svg.js';
 import { holidayssvg } from './svg.js';
 import { businesssvg } from './svg.js';
 import { familysvg } from './svg.js';
@@ -367,71 +364,85 @@ function getDataReasons() {
 };
 
 // descriptions des données
-let perholidays = '<h3 class="h3Per black   "> 51% </h3>' +
-    '<p> The main reason people travel is for holidays : almost one in two people travel for the pleasure of going on holidays. <p>';
-let perbusiness = '<h3 class="h3Per black   "> 15% </h3>' +
-    '<p> People also travel for work reasons : to work abroad or to set up their own business. <p>';
-let perfamily = '<h3 class="h3Per black "> 27% </h3>' +
-    '<p> The second main reason people travel, after holidays, is for family reasons (it\'s nearly a quarter!)<p>';
-let perother = '<h3 class="h3Per black  "> 7% </h3>' +
-    '<p> There are also many other reasons : 7% of people travel to eat, meet people, explore... <p>';
+let perholidays = '<h3 class="h3Per black   ">51%</h3>' +
+    '<p>The main reason people travel is for holidays : almost one in two people travel for the pleasure of going on holidays.<p>';
+let perbusiness = '<h3 class="h3Per black   ">15%</h3>' +
+    '<p>People also travel for work reasons : to work abroad or to set up their own business.<p>';
+let perfamily = '<h3 class="h3Per black   ">27%</h3>' +
+    '<p>The second main reason people travel, after holidays, is for family reasons (it\'s nearly a quarter!)<p>';
+let perother = '<h3 class="h3Per black   ">7%</h3>' +
+    '<p>There are also many other reasons : 7% of people travel to eat, meet people, explore...<p>';
+
+// check le nouveau json
+// let perholidays = '<h3 class="h3Per black   ">' + percentage + '</h3>' +
+// '<p>' + desc + '<p>';
 
 
-// animations et affichages de descriptions au hover
+
+// animations et affichages de descriptions au hover : au mouseover puis mouseleave
 let $holidays = $('.bouton.divholidays');
 let $business = $('.bouton.divbusiness');
 let $family = $('.bouton.divfamily');
 let $other = $('.bouton.divother');
 
+
+// au mouseenter
 function businessHover() {
     $(".business").html(businesssvg);
     $(".percentage").html(perbusiness);
-    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition", "0.5s ease");
 };
 
 function holidaysHover() {
     $(".holidays").html(holidayssvg);
     $(".percentage").html(perholidays);
-    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition", "0.5s ease");
 };
 
 function familyHover() {
     $(".family").html(familysvg);
     $(".percentage").html(perfamily);
-    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition", "0.5s ease");
 };
 
 function otherHover() {
     $(".other").html(othersvg);
     $(".percentage").html(perother);
-    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition", "0.5s ease");
 };
 
-function evidenceRemoveFamily() {
-    $(".family").html(blanksvgfamily);
+function cssHover() {
+    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition", "0.2s ease");
+};
+
+// au mouseleave
+
+function hoverRemoveFamily() {
+    $(".family").html(blanksvg);
+};
+
+function hoverRemoveBusiness() {
+    $(".business").html(blanksvg);
+};
+
+function hoverRemoveHolidays() {
+    $(".holidays").html(blanksvg);
+};
+
+function hoverRemoveOther() {
+    $(".other").html(blanksvg);
+};
+
+function evidenceRemove() {
     $(".percentage").html(" ");
     $(this).css("cursor", null).css("color", "#f1f7ed");
 };
 
-function evidenceRemoveBusiness() {
-    $(".business").html(blanksvgbusiness);
-    $(".percentage").html(" ");
-    $(this).css("cursor", null).css("color", "#f1f7ed");
-};
 
-function evidenceRemoveHolidays() {
-    $(".holidays").html(blanksvgholidays);
-    $(".percentage").html(" ");
-    $(this).css("cursor", null).css("color", "#f1f7ed");
-};
+$business.on('mouseover', businessHover).on('mouseover', cssHover).on('mouseleave', hoverRemoveBusiness);
+$business.on('mouseleave', evidenceRemove);
 
-function evidenceRemoveOther() {
-    $(".other").html(blanksvgother);
-    $(".percentage").html(" ");
-    $(this).css("cursor", null).css("color", "#f1f7ed");
-};
+$holidays.on('mouseover', holidaysHover).on('mouseover', cssHover).on('mouseleave', hoverRemoveHolidays);
+$holidays.on('mouseleave', evidenceRemove);
 
-$business.on('mouseover', businessHover).on('mouseleave', evidenceRemoveBusiness);
-$holidays.on('mouseover', holidaysHover).on('mouseleave', evidenceRemoveHolidays);
-$family.on('mouseover', familyHover).on('mouseleave', evidenceRemoveFamily);
-$other.on('mouseover', otherHover).on('mouseleave', evidenceRemoveOther);
+$family.on('mouseover', familyHover).on('mouseover', cssHover).on('mouseleave', hoverRemoveFamily);
+$family.on('mouseleave', evidenceRemove);
+
+$other.on('mouseover', otherHover).on('mouseover', cssHover).on('mouseleave', hoverRemoveOther);
+$other.on('mouseleave', evidenceRemove);
