@@ -22,6 +22,8 @@ html {
 }
 
 body {
+    min-width: 1280px;
+    min-height: 720px;
     margin: 0;
     padding: 0;
     position: relative;
@@ -698,15 +700,24 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1%;
-    width: 50%;
+    width: 60%;
     padding-bottom: 2rem;
     margin: 0 auto;
     height: 100%;
 }
 
 .podiumdesc {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     height: 100%;
+    margin: 0 10rem;
 }
+
+.podiumdesc .info {
+    width: 20%;
+}
+
 
 .control-date {
     display: flex;
