@@ -31,7 +31,7 @@ body {
 }
 
 :root {
-    scrollbar-width: none !important
+    scrollbar-width: none !important;
 }
 
 
@@ -164,7 +164,6 @@ h5 {
     line-height: 1.5;
     font-family: 'work sans', sans-serif;
     font-weight: 600;
-    letter-spacing: 0.25rem;
 }
 
 h6 {
@@ -188,11 +187,20 @@ a {
     line-height: 1.5;
 }
 
-a, a:hover, a:active, a:visited, a:focus {
+a,
+a:hover,
+a:active,
+a:visited,
+a:focus {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
 }
+
+
+
+
+
 
 
 
@@ -247,7 +255,7 @@ section {
 
 footer {
     height: 100vh;
-    padding: 3rem;
+    padding: 6rem;
 }
 
 
@@ -372,6 +380,10 @@ footer {
 #before,
 #after {
     transition: 1s ease;
+}
+
+.after-hover:hover {
+    color: #ef7373 !important;
 }
 
 
@@ -570,7 +582,11 @@ footer {
     width: 40%;
 }
 
-.flexcontent {
+.data-reasons .titles {
+    margin-bottom: 2rem;
+}
+
+.data-reasons .flexcontent {
     display: flex;
     gap: 4rem;
 }
@@ -579,7 +595,7 @@ footer {
     width: fit-content;
 }
 
-.container {
+.data-reasons .container {
     width: 30%;
     height: 600px;
     display: grid;
@@ -589,19 +605,19 @@ footer {
     grid-template-areas: ". . . . ." ". . . . ." ". . . . ." ". . . . ." ". . . . .";
 }
 
-.square {
+.data-reasons .square {
     width: 50px;
     height: 50px;
 }
 
-.percentage {
+.data-reasons .percentage {
     display: flex;
     flex-direction: column;
     justify-content: center;
     width: 50%;
 }
 
-.h3Per {
+.data-reasons .h3Per {
     font-size: 9rem;
     margin-top: -30px;
 }
@@ -609,7 +625,7 @@ footer {
 
 /* podium */
 
-.divsvgpodium {
+.podium-page {
     display: grid;
     height: 100%;
     width: 100%;
@@ -617,42 +633,14 @@ footer {
     grid-template-rows: auto 1fr auto;
     grid-template-columns: 1fr;
     justify-content: center;
-    padding: 30px 0;
+    padding: 4rem 0;
 }
 
-.divsvgpodium h2 {
+.podium-page h2 {
     text-align: center;
 }
 
-#podiumsvg {
-    margin-top: 10vh;
-    padding-left: -25%;
-}
-
-#cursor {
-    margin-top: 10vh;
-    display: block;
-    width: 75%;
-    background: #f1f7ed50;
-    cursor: pointer;
-    color: #f1f7ed;
-    outline: none;
-    border-radius: 10px;
-    -webkit-appearance: none;
-    height: 2px;
-}
-
-#cursor::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 0.25em;
-    height: 2em;
-    border-radius: 10px;
-    background-color: #f1f7ed;
-    opacity: 1;
-}
-
 .ticks {
-    margin-top: 15px;
     display: flex;
     width: 77.3%;
     justify-content: space-between;
@@ -669,6 +657,11 @@ footer {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    transition: 0.5s ease;
+}
+
+.podium:hover {
+    transition: 0.5s ease;
 }
 
 .labelpays {
@@ -677,6 +670,8 @@ footer {
     color: #0a061d;
     font-size: 2rem;
     margin-bottom: 10px;
+    transition: 0.5s ease;
+
 }
 
 .top {
@@ -690,6 +685,8 @@ footer {
     height: 50%;
     color: #87b1ff;
     padding-bottom: 10px;
+    transition: 0.5s ease;
+    border-radius: 5px;
 }
 
 .rect1 .top {
@@ -702,6 +699,7 @@ footer {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1%;
     width: 50%;
+    padding-bottom: 2rem;
     margin: 0 auto;
     height: 100%;
 }
@@ -715,6 +713,31 @@ footer {
     flex-direction: column;
     align-items: center;
 }
+
+/* input range */
+
+
+#cursor {
+    display: block;
+    width: 75%;
+    cursor: pointer;
+    color: #f1f7ed;
+    outline: none;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    height: 2px;
+    margin: 2rem 0;
+}
+
+#cursor::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1rem;
+    height: 1.5rem;
+    border-radius: 10px;
+    background-color: #f1f7ed;
+    opacity: 1;
+}
+
 
 @media screen and (max-width:900px) {
 

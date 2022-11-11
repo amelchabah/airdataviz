@@ -1,4 +1,15 @@
-// déclaration des svg
+// animations
+AOS.init();
+
+// smooth scroll
+$(function () {
+    $.scrollify({
+        section: ".scrollify",
+        scrollSpeed: 200,
+    });
+});
+
+// importation des svg du fichier svg.js
 import { loadingplanesvg } from './svg.js';
 import { blanksvgfamily } from './svg.js';
 import { blanksvgbusiness } from './svg.js';
@@ -10,21 +21,22 @@ import { familysvg } from './svg.js';
 import { othersvg } from './svg.js';
 import { mapsvg } from './svg.js';
 
-
 document.querySelector('#loader').innerHTML += loadingplanesvg;
 
-
+// lancement des fonctions au chargement de la page
 window.onload = function () {
     getDataPodium();
     getDataReasons();
     getDataMap();
 };
 
+// injection des données des fichiers json : carte
 function getDataMap() {
     fetch('./json/data_map.json')
         .then(res => res.json())
         .then(data => {
 
+            // injection (push) des données dans deux tableaux
             let data2019 = [];
             let data2020 = [];
 
@@ -33,17 +45,23 @@ function getDataMap() {
                 data2020.push(map.africa.year2020.number, map.northafrica.year2020.number, map.southasia.year2020.number, map.europe.year2020.number, map.america.year2020.number);
             });
 
+            // injection des données des tableaux dans les 5 balises correspondant aux 5 régions dans index.html
             for (let i = 0; i < 5; i++) {
+                // M = millions
                 document.querySelector(`.n${i} p`).innerHTML += data2019[i] + 'M';
             };
 
+            // au clic du bouton "avant", injecter les données de 2019
             document.querySelector('#before').addEventListener("click", () => {
                 for (let i = 0; i < 5; i++) {
                     document.querySelector(`.n${i} p`).innerHTML = data2019[i] + 'M';
                 }
             });
+
+            // au clic du bouton "après", injecter les données de 2020
             document.querySelector('#after').addEventListener("click", () => {
                 for (let i = 0; i < 5; i++) {
+                    // calcul du taux de variation entre 2019 et 2020, arrondi au dixième
                     function numVariation(a, b) {
                         return ((b / a) - 1) * 100;
                     }
@@ -53,41 +71,13 @@ function getDataMap() {
         });
 }
 
-let $after = $('#after');
-$after.on('click', switchRed);
 
-let $before = $('#before');
-$before.on('click', switchGreen);
-
-
-
+// injection de la carte en svg
 document.querySelector('.map').innerHTML += mapsvg;
 
-// continents hover
+// interactions des regions au hover et au clic des boutons "before" et "after"
 
-let $continent = $('.continent');
-$continent.on('mouseenter', opacityOnHover).on('mouseleave', opacityRemove);
-
-let $America = $('#america'),
-    $AmericaTooltip = $('#america-tooltip');
-$America.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
-
-let $europe = $('#europe'),
-    $europeTooltip = $('#europe-tooltip');
-$europe.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
-
-let $northAfrica = $('#north-africa'),
-    $northAfricaTooltip = $('#north-africa-tooltip');
-$northAfrica.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
-
-let $Africa = $('#africa'),
-    $AfricaTooltip = $('#africa-tooltip');
-$Africa.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
-
-var $southAsia = $('#south-asia'),
-    $southAsiaTooltip = $('#south-asia-tooltip');
-$southAsia.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
-
+// apparition de la bulle, suivant la position du curseur
 function showTooltip(event) {
     var el = event.currentTarget.id,
         selector = "#" + el + "-tooltip",
@@ -143,33 +133,51 @@ function switchGreen() {
     $('#north-africa g').attr("class", "green").css('transition', '0.5s');
 }
 
+let $after = $('#after');
+$after.on('click', switchRed);
+
+let $before = $('#before');
+$before.on('click', switchGreen);
+
+let $continent = $('.continent');
+$continent.on('mouseenter', opacityOnHover).on('mouseleave', opacityRemove);
+
+let $America = $('#america'),
+    $AmericaTooltip = $('#america-tooltip');
+$America.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
+
+let $europe = $('#europe'),
+    $europeTooltip = $('#europe-tooltip');
+$europe.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
+
+let $northAfrica = $('#north-africa'),
+    $northAfricaTooltip = $('#north-africa-tooltip');
+$northAfrica.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
+
+let $Africa = $('#africa'),
+    $AfricaTooltip = $('#africa-tooltip');
+$Africa.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
+
+var $southAsia = $('#south-asia'),
+    $southAsiaTooltip = $('#south-asia-tooltip');
+$southAsia.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
 
 
 
 
 
 
-
-
-
-// podium
-
-
-
-
-
+// script : podium
 
 
 // remplissage de la grille
-
-// most visited country over the years
 
 function getDataPodium() {
     fetch('./json/data_podium.json')
         .then(res => res.json())
         .then(data => {
 
-
+            // injection (push) des données dans cinq tableaux
             let idtrv = [];
             let idcit = [];
             let cit = [];
@@ -189,29 +197,40 @@ function getDataPodium() {
             changeHeight(trv);
             changeLabel(cit);
 
-            $(".rect1").hover(function () {
-                hoverPodium(2022, cit[0], trv[0]);
-                evidencePodium("rect1");
-            }).mouseleave(function () {
-                removePodium();
-                evidenceRemovePodium("rect1");
-            }).css("cursor", "pointer");
+            // boucle
+            for (let i = 1; i < 4; i++) {
+                $(`.rect${i}`).hover(function () {
+                    hoverPodium(2022, cit[i], trv[i]);
+                    evidencePodium(`rect${i}`);
+                }).mouseleave(function () {
+                    removePodium();
+                    evidenceRemovePodium(`rect${i}`);
+                }).css("cursor", "pointer");
+            }
 
-            $(".rect2").hover(function () {
-                hoverPodium(2022, cit[1], trv[1]);
-                evidencePodium("rect2");
-            }).mouseleave(function () {
-                removePodium();
-                evidenceRemovePodium("rect2");
-            }).css("cursor", "pointer");
+            // $(".rect1").hover(function () {
+            //     hoverPodium(2022, cit[0], trv[0]);
+            //     evidencePodium("rect1");
+            // }).mouseleave(function () {
+            //     removePodium();
+            //     evidenceRemovePodium("rect1");
+            // }).css("cursor", "pointer");
 
-            $(".rect3").hover(function () {
-                hoverPodium(2022, cit[2], trv[2]);
-                evidencePodium("rect3");
-            }).mouseleave(function () {
-                removePodium();
-                evidenceRemovePodium("rect3");
-            }).css("cursor", "pointer");
+            // $(".rect2").hover(function () {
+            //     hoverPodium(2022, cit[1], trv[1]);
+            //     evidencePodium("rect2");
+            // }).mouseleave(function () {
+            //     removePodium();
+            //     evidenceRemovePodium("rect2");
+            // }).css("cursor", "pointer");
+
+            // $(".rect3").hover(function () {
+            //     hoverPodium(2022, cit[2], trv[2]);
+            //     evidencePodium("rect3");
+            // }).mouseleave(function () {
+            //     removePodium();
+            //     evidenceRemovePodium("rect3");
+            // }).css("cursor", "pointer");
 
             const range = document.querySelector("input[type=\"range\"]");
             range.addEventListener("input", () => {
@@ -225,31 +244,40 @@ function getDataPodium() {
                 changeHeight(trvR);
                 changeLabel(citR);
 
-                $(".rect1").hover(function () {
-                    hoverPodium(yearsR, citR[0], trvR[0]);
-                    evidencePodium("rect1");
-                }).mouseleave(function () {
-                    removePodium();
-                    evidenceRemovePodium("rect1");
-                }).css("cursor", "pointer")
+                // boucle
+                for (let i = 0; i < 3; i++) {
+                    $(`.rect${i+1}`).hover(function () {
+                        hoverPodium(yearsR, citR[i], trvR[i]);
+                        evidencePodium(`rect${i+1}`);
+                    }).mouseleave(function () {
+                        removePodium();
+                        evidenceRemovePodium(`rect${i+1}`);
+                    }).css("cursor", "pointer");
+                }
 
-                $(".rect2").hover(function () {
-                    hoverPodium(yearsR, citR[1], trvR[1]);
-                    evidencePodium("rect2");
-                }).mouseleave(function () {
-                    removePodium();
-                    evidenceRemovePodium("rect2");
-                }).css("cursor", "pointer");
+                // $(".rect1").hover(function () {
+                //     hoverPodium(yearsR, citR[0], trvR[0]);
+                //     evidencePodium("rect1");
+                // }).mouseleave(function () {
+                //     removePodium();
+                //     evidenceRemovePodium("rect1");
+                // }).css("cursor", "pointer")
 
-                $(".rect3").hover(function () {
-                    hoverPodium(yearsR, citR[2], trvR[2]);
-                    evidencePodium("rect3");
-                }).mouseleave(function () {
-                    removePodium();
-                    evidenceRemovePodium("rect3");
-                }).css("cursor", "pointer");
+                // $(".rect2").hover(function () {
+                //     hoverPodium(yearsR, citR[1], trvR[1]);
+                //     evidencePodium("rect2");
+                // }).mouseleave(function () {
+                //     removePodium();
+                //     evidenceRemovePodium("rect2");
+                // }).css("cursor", "pointer");
 
-
+                // $(".rect3").hover(function () {
+                //     hoverPodium(yearsR, citR[2], trvR[2]);
+                //     evidencePodium("rect3");
+                // }).mouseleave(function () {
+                //     removePodium();
+                //     evidenceRemovePodium("rect3");
+                // }).css("cursor", "pointer");
             });
         });
 };
@@ -304,6 +332,11 @@ function changeHeight(tab) {
 
 
 
+
+
+// reasons to travel
+
+
 let wrapperBlock = document.querySelector(".container");
 let tab = [];
 
@@ -348,25 +381,25 @@ let $other = $('.bouton.divother');
 function businessHover() {
     $(".business").html(businesssvg);
     $(".percentage").html(perbusiness);
-    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition","0.5s ease");
+    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition", "0.5s ease");
 };
 
 function holidaysHover() {
     $(".holidays").html(holidayssvg);
     $(".percentage").html(perholidays);
-    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition","0.5s ease");
+    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition", "0.5s ease");
 };
 
 function familyHover() {
     $(".family").html(familysvg);
     $(".percentage").html(perfamily);
-    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition","0.5s ease");
+    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition", "0.5s ease");
 };
 
 function otherHover() {
     $(".other").html(othersvg);
     $(".percentage").html(perother);
-    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition","0.5s ease");
+    $(this).css("cursor", "pointer").css("color", "#0a061d").css("transition", "0.5s ease");
 };
 
 function evidenceRemoveFamily() {
