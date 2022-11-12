@@ -70,7 +70,7 @@ function getDataDeparture() {
 
             // injection des données des tableaux dans les 5 balises correspondant aux 5 régions dans index.html
             for (let i = 0; i < 10; i++) {
-                document.querySelector(`tbody`).innerHTML += `<tr data-aos="flip-down" data-aos-delay="1000" data-aos-duration="1000"><td class="position${i}"></td><td class="country${i}"></td><td class="visitors${i}"></td></tr>`;
+                document.querySelector(`tbody`).innerHTML += `<tr data-aos="flip-down" data-aos-delay="2000" data-aos-duration="1000"><td class="position${i}"></td><td class="country${i}"></td><td class="visitors${i}"></td></tr>`;
                 document.querySelector(`.position${i}`).innerHTML += positions[i];
                 document.querySelector(`.country${i}`).innerHTML += countries[i];
                 document.querySelector(`.visitors${i}`).innerHTML += visitors[i] + ' Million';
@@ -265,7 +265,7 @@ function getDataPodium() {
                 }).css("cursor", "pointer");
             };
 
-            // script du slider d'années
+            // script et interactions du slider d'années
             const range = document.querySelector("input[type=\"range\"]");
             range.addEventListener("input", () => {
                 let valR = -(range.value - 2018) + 1;
