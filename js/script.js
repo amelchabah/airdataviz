@@ -404,7 +404,7 @@ function getDataReasons() {
             };
 
             function cssHover() {
-                $(this).css("color", "#0a061d").css("transition", "0.2s ease");
+                $(this).css("cursor","default").css("color", "#0a061d").css("transition", "0.2s ease");
             };
 
             // au mouseleave
