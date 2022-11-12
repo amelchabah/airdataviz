@@ -3,4 +3,4 @@
 by Amel Chabah, Eléa Crunchant, Ambre Lascoux
 
 
-MMI second year student project, coded into JS/HTML/CSS & jQuery, Air Dataviz is a tourism data visualization website, available at https://amelchabah.github.io/dataviz/
+MMI second year student project, coded into JS/HTML/CSS & jQuery, Air Dataviz is a tourism data visualization website, available at https://amelchabah.github.io/airdataviz/
