@@ -358,10 +358,7 @@ function getDataReasons() {
                 // shuffleArray(tab);
                 // repartition au hasard des svg
                 tab.sort(function (a, b) { return Math.random() - 0.5 })
-                console.log(reason.percentage)
             });
-
-            console.log(per);
 
             // ajout des svg correspondant dans chaque case du container
             tab.forEach(function (reason) {
