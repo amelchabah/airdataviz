@@ -1,20 +1,21 @@
-[{
-    "year": 2019,
-    "top": {
-        "top1": {
-            "city": "Hong Kong",
-            "travellers": 31.5
-        },
-        "top2": {
-            "city": "Bangkok",
-            "travellers": 27.1
-        },
-        "top3": {
-            "city": "London",
-            "travellers": 21.5
+[
+    {
+        "year": 2019,
+        "top": {
+            "top1": {
+                "city": "Hong Kong",
+                "travellers": 31.5
+            },
+            "top2": {
+                "city": "Bangkok",
+                "travellers": 27.1
+            },
+            "top3": {
+                "city": "London",
+                "travellers": 21.5
+            }
         }
-    }
-},
+    },
     {
         "year": 2018,
         "top": {
