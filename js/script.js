@@ -1,14 +1,6 @@
 // animations
 AOS.init();
 
-// smooth scroll
-$(function() {
-    $.scrollify({
-        section: ".scrollify",
-        scrollSpeed: 200,
-    });
-});
-
 // importation des svg du fichier svg.js
 import { loadingplanesvg } from './svg.js';
 import { blanksvg } from './svg.js';
@@ -18,19 +10,44 @@ import { familysvg } from './svg.js';
 import { othersvg } from './svg.js';
 import { mapsvg } from './svg.js';
 
-document.querySelector('#loader').innerHTML += loadingplanesvg;
 
 // lancement des fonctions au chargement de la page
-window.onload = function() {
+window.onload = function () {
     getDataDeparture();
     getDataMap();
     getDataPodium();
     getDataReasons();
 };
 
+// animations générales
+document.querySelector('#loader').innerHTML += loadingplanesvg;
+
+function linkHover() {
+    $('footer a').css('opacity', '0.7');
+    $(this).css("opacity", "1")
+}
+function linkHoverRemove() {
+    $('footer a').css('opacity', '1');
+    $(this).css("opacity", "1")
+}
+
+$('footer a').on('mouseenter', linkHover).on('mouseleave', linkHoverRemove).css('transition', '0.2s');
 
 
-// injection des données des fichiers json : carte
+
+// scripts des données
+// 1. departure board
+// 2. covid19 map
+// 3. top 3 cities podium
+// 4. reasons to travel
+
+
+
+
+
+// 1. injection des données des fichiers json : tableau de départs
+
+
 function getDataDeparture() {
     fetch('./json/data_departure.json')
         .then(res => res.json())
@@ -56,31 +73,9 @@ function getDataDeparture() {
                 document.querySelector(`tbody`).innerHTML += `<tr data-aos="flip-down" data-aos-delay="1000" data-aos-duration="1000"><td class="position${i}"></td><td class="country${i}"></td><td class="visitors${i}"></td></tr>`;
                 document.querySelector(`.position${i}`).innerHTML += positions[i];
                 document.querySelector(`.country${i}`).innerHTML += countries[i];
-                document.querySelector(`.visitors${i}`).innerHTML += visitors[i] + ' Millions';
+                document.querySelector(`.visitors${i}`).innerHTML += visitors[i] + ' Million';
 
             };
-
-            // // for (let i = 0; i < 10; i++) {
-            // //     document.querySelector(`.country`).innerHTML += countries;
-            // // };
-
-            // // au clic du bouton "avant", injecter les données de 2019
-            // document.querySelector('#before').addEventListener("click", () => {
-            //     for (let i = 0; i < 5; i++) {
-            //         document.querySelector(`.n${i} p`).innerHTML = data2019[i] + 'M';
-            //     }
-            // });
-
-            // // au clic du bouton "après", injecter les données de 2020
-            // document.querySelector('#after').addEventListener("click", () => {
-            //     for (let i = 0; i < 5; i++) {
-            //         // calcul du taux de variation entre 2019 et 2020, arrondi au dixième
-            //         function numVariation(a, b) {
-            //             return ((b / a) - 1) * 100;
-            //         }
-            //         document.querySelector(`.n${i} p`).innerHTML = data2020[i] + 'M<br><span class="red"><b>' + Math.round(numVariation(data2019[i], data2020[i])) + '%</b></span>';
-            // }
-            // });
         });
 }
 
@@ -88,13 +83,9 @@ function getDataDeparture() {
 
 
 
+// 2. injection des données des fichiers json : carte
 
 
-
-
-
-
-// injection des données des fichiers json : carte
 function getDataMap() {
     fetch('./json/data_map.json')
         .then(res => res.json())
@@ -162,6 +153,8 @@ function showTooltip(event) {
     });
 };
 
+// animations au hover
+
 function hideTooltip() {
     $('.world-tooltip').hide();
 };
@@ -175,6 +168,7 @@ function opacityRemove() {
     $(".continent").css("opacity", "1");
 };
 
+// changement de mode : post-pandémie
 function switchRed() {
     $('#after').attr("class", "white").css('transition', '0.5s').css('cursor', "default");
     $('#before').attr("class", "red").css('transition', '0.5s').css('cursor', "pointer");
@@ -186,6 +180,7 @@ function switchRed() {
     $('#north-africa g').attr("class", "red").css('transition', '0.5s');
 }
 
+// changement de mode : pré-pandémie
 function switchGreen() {
     $('#after').attr("class", "green").css('transition', '0.5s').css('cursor', "pointer");
     $('#before').attr("class", "white").css('transition', '0.5s').css('cursor', "default");
@@ -206,24 +201,19 @@ $before.on('click', switchGreen);
 let $continent = $('.continent');
 $continent.on('mouseenter', opacityOnHover).on('mouseleave', opacityRemove);
 
-let $America = $('#america'),
-    $AmericaTooltip = $('#america-tooltip');
+let $America = $('#america');
 $America.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
 
-let $europe = $('#europe'),
-    $europeTooltip = $('#europe-tooltip');
+let $europe = $('#europe');
 $europe.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
 
-let $northAfrica = $('#north-africa'),
-    $northAfricaTooltip = $('#north-africa-tooltip');
+let $northAfrica = $('#north-africa');
 $northAfrica.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
 
-let $Africa = $('#africa'),
-    $AfricaTooltip = $('#africa-tooltip');
+let $Africa = $('#africa');
 $Africa.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
 
-var $southAsia = $('#south-asia'),
-    $southAsiaTooltip = $('#south-asia-tooltip');
+var $southAsia = $('#south-asia');
 $southAsia.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
 
 
@@ -231,7 +221,9 @@ $southAsia.on('mousemove', showTooltip).on('mouseleave', hideTooltip);
 
 
 
-// script : podium
+// 3. injection des données des fichiers json : podium
+
+
 
 
 // remplissage de la grille
@@ -250,7 +242,7 @@ function getDataPodium() {
 
             data.forEach(function viewData(podium) {
                 idtrv.push(podium.top.top1.travellers, podium.top.top2.travellers, podium.top.top3.travellers);
-                idcit.push(podium.top.top1.country, podium.top.top2.country, podium.top.top3.country);
+                idcit.push(podium.top.top1.city, podium.top.top2.city, podium.top.top3.city);
                 years.push(podium.year);
             });
 
@@ -258,47 +250,25 @@ function getDataPodium() {
             trv.push(idtrv[0], idtrv[1], idtrv[2]);
             cit.push(idcit[0], idcit[1], idcit[2]);
 
+            // changement de taille et labels en fonction des données
             changeHeight(trv);
             changeLabel(cit);
 
-            // boucle
+            // boucle et interactions au hover du podium
             for (let i = 1; i < 4; i++) {
-                $(`.rect${i}`).hover(function() {
+                $(`.rect${i}`).hover(function () {
                     hoverPodium(trv[i - 1], i);
                     evidencePodium(`rect${i}`);
-                }).mouseleave(function() {
+                }).mouseleave(function () {
                     removePodium(i);
                     evidenceRemovePodium(`rect${i}`);
                 }).css("cursor", "pointer");
-            }
+            };
 
-            // $(".rect1").hover(function () {
-            //     hoverPodium(2022, cit[0], trv[0]);
-            //     evidencePodium("rect1");
-            // }).mouseleave(function () {
-            //     removePodium();
-            //     evidenceRemovePodium("rect1");
-            // }).css("cursor", "pointer");
-
-            // $(".rect2").hover(function () {
-            //     hoverPodium(2022, cit[1], trv[1]);
-            //     evidencePodium("rect2");
-            // }).mouseleave(function () {
-            //     removePodium();
-            //     evidenceRemovePodium("rect2");
-            // }).css("cursor", "pointer");
-
-            // $(".rect3").hover(function () {
-            //     hoverPodium(2022, cit[2], trv[2]);
-            //     evidencePodium("rect3");
-            // }).mouseleave(function () {
-            //     removePodium();
-            //     evidenceRemovePodium("rect3");
-            // }).css("cursor", "pointer");
-
+            // script du slider d'années
             const range = document.querySelector("input[type=\"range\"]");
             range.addEventListener("input", () => {
-                let valR = -(range.value - 2021) + 1;
+                let valR = -(range.value - 2018) + 1;
                 let trvR = [];
                 let citR = [];
                 let yearsR = [];
@@ -310,41 +280,19 @@ function getDataPodium() {
 
                 // boucle
                 for (let i = 0; i < 3; i++) {
-                    $(`.rect${i + 1}`).hover(function() {
+                    $(`.rect${i + 1}`).hover(function () {
                         hoverPodium(trvR[i], i + 1);
                         evidencePodium(`rect${i + 1}`);
-                    }).mouseleave(function() {
+                    }).mouseleave(function () {
                         removePodium(i + 1);
                         evidenceRemovePodium(`rect${i + 1}`);
                     }).css("cursor", "pointer");
                 }
-
-                // $(".rect1").hover(function () {
-                //     hoverPodium(yearsR, citR[0], trvR[0]);
-                //     evidencePodium("rect1");
-                // }).mouseleave(function () {
-                //     removePodium();
-                //     evidenceRemovePodium("rect1");
-                // }).css("cursor", "pointer")
-
-                // $(".rect2").hover(function () {
-                //     hoverPodium(yearsR, citR[1], trvR[1]);
-                //     evidencePodium("rect2");
-                // }).mouseleave(function () {
-                //     removePodium();
-                //     evidenceRemovePodium("rect2");
-                // }).css("cursor", "pointer");
-
-                // $(".rect3").hover(function () {
-                //     hoverPodium(yearsR, citR[2], trvR[2]);
-                //     evidencePodium("rect3");
-                // }).mouseleave(function () {
-                //     removePodium();
-                //     evidenceRemovePodium("rect3");
-                // }).css("cursor", "pointer");
             });
         });
 };
+
+// creation de fonctions d'animations
 
 function hoverPodium(trav, i) {
     $(`.nbtourists${i}`).html(`${trav} million`);
@@ -377,29 +325,16 @@ function changeHeight(tab) {
     // boucle for
     for (let i = 1; i < 4; i++) {
         $(`.rect${i} .top`).css({
-            "height": (tab[(i - 1)]) + "%",
+            "height": (tab[(i - 1)]) * 2.5 + "%",
         });
     }
 };
 
 
-//while hover .podium .rect1 use hoverPodium() with the value of the range
-
-// //while hover .podium .rect2 use hoverPodium() with the value of the range
-// $(".podium .rect2").hover(function() {
-//     hoverPodium();
-// });
-
-// //while hover .podium .rect3 use hoverPodium() with the value of the range
-// $(".podium .rect3").hover(function() {
-//     hoverPodium();
-// });
 
 
 
-
-
-// reasons to travel
+// 4. injection des données des fichiers json : motifs de voyage
 
 function getDataReasons() {
     fetch('./json/data_reasons.json')
@@ -422,14 +357,14 @@ function getDataReasons() {
                 }
                 // shuffleArray(tab);
                 // repartition au hasard des svg
-                tab.sort(function(a, b) { return Math.random() - 0.5 })
+                tab.sort(function (a, b) { return Math.random() - 0.5 })
                 console.log(reason.percentage)
             });
 
             console.log(per);
 
             // ajout des svg correspondant dans chaque case du container
-            tab.forEach(function(reason) {
+            tab.forEach(function (reason) {
                 var square = document.createElement("div");
                 square.classList.add("" + reason + "");
                 wrapperBlock.appendChild(square).innerHTML += '<svg id="blanksvg' + reason + '" width="50" height="50" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M40 55.3199C44.577 55.3199 48.8126 53.8583 52.2656 51.3765C54.2195 49.9721 57.0585 50.0213 58.2664 52.1023C61.4644 57.6118 63.3766 64.5997 63.3766 72.203C56.8831 76.2729 52.9106 80 40 80C27.0894 80 21.7336 75.5951 16.6234 72.203C16.6234 64.5997 18.5356 57.6118 21.7336 52.1023C22.9415 50.0213 25.7805 49.9721 27.7344 51.3765C31.1874 53.8583 35.423 55.3199 40 55.3199Z" fill="#F1F7ED"/><path d="M58.1818 33.7662C58.1818 43.8078 50.0415 51.9481 40 51.9481C29.9585 51.9481 21.8182 43.8078 21.8182 33.7662C21.8182 23.7247 29.9585 15.5844 40 15.5844C50.0415 15.5844 58.1818 23.7247 58.1818 33.7662Z" fill="#F1F7ED"/></svg>';
@@ -437,31 +372,18 @@ function getDataReasons() {
 
             // descriptions des données
 
-            console.log(per);
-
-
-            // check le nouveau json
-            // let perholidays = '<h3 class="h3Per black   ">' + percentage + '</h3>' +
-            // '<p>' + desc + '<p>';
-
             // animations et affichages de descriptions au hover : au mouseover puis mouseleave
             let $holidays = $('.bouton.divholidays');
             let $business = $('.bouton.divbusiness');
             let $family = $('.bouton.divfamily');
             let $other = $('.bouton.divother');
-
-
-
             let perdesc = "";
+
+            // au mouseover
 
             function secPerDesc(i) {
                 perdesc = `<h3 class="h3Per black">${per[i]}%</h3><p>${desc[i]}<p>`;
                 return perdesc;
-            }
-
-            function businessHover() {
-                $(".business").html(businesssvg);
-                $(".percentage").html(secPerDesc(2));
             };
 
             function holidaysHover() {
@@ -472,6 +394,11 @@ function getDataReasons() {
             function familyHover() {
                 $(".family").html(familysvg);
                 $(".percentage").html(secPerDesc(1));
+            };
+
+            function businessHover() {
+                $(".business").html(businesssvg);
+                $(".percentage").html(secPerDesc(2));
             };
 
             function otherHover() {
